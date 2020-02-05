@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../../components/views/Header/Header";
+import HeaderContainer from "../../components/containers/Header";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
@@ -12,10 +12,10 @@ export default class LangingPage extends Component {
     return (
       <div>
         <Container maxWidth="xl">
-          <Header />
+          <HeaderContainer />
           <Typography
             component="div"
-            style={{ backgroundColor: "#cfe8fc", height: "100vh" }}
+            style={{ backgroundColor: "#cfe8fc", height: "100%" }}
           >
             <DogContainer />
           </Typography>
