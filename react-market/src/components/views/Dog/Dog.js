@@ -15,6 +15,7 @@ export default class Dog extends Component {
                 className="App-logo"
                 alt="logo"
                 width={400}
+                height={400}
               />
               <h1 className="App-title">Welcome to Dog Saga</h1>
             </header>

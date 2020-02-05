@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "./DogActions";
 class DogContainer extends React.Component {
   render() {
+    console.log("DogContainer");
     const { fetching, dog, onRequestDog, error } = this.props;
     return (
       <React.Fragment>
@@ -18,20 +19,12 @@ class DogContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = store => {
   return {
-    fetching: state.fetching,
-    dog: state.dog,
-    error: state.error
+    fetching: store.dogState.fetching,
+    dog: store.dogState.dog,
+    error: store.dogState.error
   };
 };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onRequestDog: () => dispatch({ type: "API_CALL_REQUEST" })
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(DogContainer);
 
 export default connect(mapStateToProps, actions)(DogContainer);
