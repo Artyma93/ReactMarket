@@ -1,7 +1,12 @@
-// action types
-const API_CALL_REQUEST = "API_CALL_REQUEST";
-const API_CALL_SUCCESS = "API_CALL_SUCCESS";
-const API_CALL_FAILURE = "API_CALL_FAILURE";
+// import API_CALL_REQUEST from "./LandingPageConstans"
+// import API_CALL_SUCCESS from "./LandingPageConstans"
+// import API_CALL_FAILURE from "./LandingPageConstans"
+
+import {
+  API_CALL_REQUEST,
+  API_CALL_SUCCESS,
+  API_CALL_FAILURE
+} from "./LandingPageConstans";
 
 // reducer with initial state
 const initialState = {

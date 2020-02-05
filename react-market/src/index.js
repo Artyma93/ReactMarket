@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 // import Test2 from "./views/Test2Page/Test2";
 // import LangingPage2 from "./views/LandingPage2/LangingPage2";
 
-import App from "./views/app";
+import App from "./pages/app";
 
 // import registerServiceWorker from "./registerServiceWorker";
 
@@ -14,8 +14,12 @@ import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
 
-import { reducer } from "./components/rootReducer";
-import { watcherSaga } from "./components/rootSaga";
+// import { reducer } from "./components/rootReducer";
+// import { reducer } from "./reducers/rootReducer";
+import reducer from "./reducers/rootReducer";
+// import { watcherSaga } from "./components/rootSaga";
+// import watcherSaga from "./sagas/index";
+import rootSaga from "./sagas/index";
 
 // import {
 //   BrowserRouter as Router,
@@ -35,7 +39,8 @@ const sagaMiddleware = createSagaMiddleware();
 let store = createStore(reducer, compose(applyMiddleware(sagaMiddleware)));
 
 // run the saga
-sagaMiddleware.run(watcherSaga);
+// sagaMiddleware.run(watcherSaga);
+sagaMiddleware.run(rootSaga);
 
 // ReactDOM.render(
 //   <Provider store={store}>
@@ -52,6 +57,7 @@ sagaMiddleware.run(watcherSaga);
 //   document.getElementById("root")
 // );
 // registerServiceWorker();
+console.log("index")
 ReactDOM.render(
   <Provider store={store}>
     <App />

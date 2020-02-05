@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../../components/Header/Header";
+import Header from "../../components/views/Header/Header";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";

@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
-import LandingPage2Reducer from "../views/LandingPage2/LandingPage2Reducer";
+import DogReducer from "../components/containers/Dog/DogReducer";
+import DogReducer2 from "../components/containers/Dog2/DogReducer";
 
-export default combineReducers({
-  LandingPage2Reducer
+const rootReducer = combineReducers({
+  dogState: DogReducer
 });
+
+export default rootReducer;
