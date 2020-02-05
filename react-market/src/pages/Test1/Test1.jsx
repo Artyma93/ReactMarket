@@ -6,7 +6,7 @@ import Container from "@material-ui/core/Container";
 
 import DogContainer from "../../components/containers/Dog";
 
-export default class LangingPage extends Component {
+export default class Test1 extends Component {
   render() {
     console.log("LangingPage");
     return (

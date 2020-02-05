@@ -5,11 +5,9 @@ import ToolBar from "@material-ui/core/ToolBar";
 import Typography from "@material-ui/core/Typography";
 
 export default props => (
-  <AppBar position="static">
+  <AppBar position="sticky" color="default">
     <ToolBar>
-      <Typography variant="headline" color="inherit">
-        Header
-      </Typography>
+      Header
     </ToolBar>
   </AppBar>
 );

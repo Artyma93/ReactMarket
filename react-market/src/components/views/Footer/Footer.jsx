@@ -7,9 +7,8 @@ import Typography from "@material-ui/core/Typography";
 export default props => (
   <AppBar position="static">
     <ToolBar>
-      <Typography variant="headline" color="inherit">
-        Header
-      </Typography>
+      {/* <Typography>Header</Typography> */}
+      
     </ToolBar>
   </AppBar>
 );
