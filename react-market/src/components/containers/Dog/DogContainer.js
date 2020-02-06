@@ -21,11 +21,19 @@ class DogContainer extends React.Component {
   }
 }
 
-const mapStateToProps = store => {
+// const mapStateToProps = store => {
+//   return {
+//     fetching: store.dogState.fetching,
+//     dog: store.dogState.dog,
+//     error: store.dogState.error
+//   };
+// };
+
+const mapStateToProps = ({ dogState: { fetching, dog, error }})  => {
   return {
-    fetching: store.dogState.fetching,
-    dog: store.dogState.dog,
-    error: store.dogState.error
+    fetching: fetching,
+    dog: dog,
+    error: error
   };
 };
 

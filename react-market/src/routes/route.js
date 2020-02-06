@@ -1,20 +1,20 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import LangingPage from "../pages/LandingPage/LangingPage";
-import Test1 from "../pages/Test1/Test1";
+import DogPage from "../pages/DogPage/DogPage";
 
 export default class Routing extends React.Component {
   render() {
     console.log("routing");
     return (
       <React.Fragment>
-      {/* <main> */}
+        {/* <main> */}
         <Switch>
           <Route path="/" component={LangingPage} exact></Route>
-          <Route path="/test1" component={Test1} exact></Route>
+          <Route path="/dog" component={DogPage} exact></Route>
           <Redirect to="/" />
         </Switch>
-      {/* </main> */}
+        {/* </main> */}
       </React.Fragment>
     );
   }
