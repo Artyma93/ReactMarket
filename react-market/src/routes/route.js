@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Route, Switch, Redirect } from "react-router-dom";
 import LangingPage from "../pages/LandingPage/LangingPage";
 import Test1 from "../pages/Test1/Test1";

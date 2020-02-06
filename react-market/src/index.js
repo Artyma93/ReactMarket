@@ -10,6 +10,7 @@ import configureStore from "./store/configureStore";
 const store = configureStore();
 
 console.log("index");
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

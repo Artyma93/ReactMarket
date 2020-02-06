@@ -2,9 +2,11 @@ import React from "react";
 import Dog from "../../views/Dog";
 import { connect } from "react-redux";
 import * as actions from "./DogActions";
+
 class DogContainer extends React.Component {
   render() {
     console.log("DogContainer");
+    // debugger
     const { fetching, dog, onRequestDog, error } = this.props;
     return (
       <React.Fragment>
