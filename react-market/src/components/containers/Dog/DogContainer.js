@@ -5,7 +5,7 @@ import * as actions from "./DogActions";
 
 class DogContainer extends React.Component {
   render() {
-    console.log("DogContainer");
+    // console.log("DogContainer");
     // debugger
     const { fetching, dog, onRequestDog, error } = this.props;
     return (

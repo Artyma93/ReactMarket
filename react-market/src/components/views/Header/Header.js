@@ -21,6 +21,9 @@ export default props => (
           <li>
             <Link to="/dog/">Dog</Link>
           </li>
+          <li>
+            <Link to="/wfc/">WFC</Link>
+          </li>
         </ul>
       </div>
     </ToolBar>

@@ -3,7 +3,7 @@ import Header from "../../views/Header";
 
 class HeaderContainer extends React.Component {
   render() {
-    console.log("HeaderContainer");
+    // console.log("HeaderContainer");
     return (
       <React.Fragment>
         <Header />

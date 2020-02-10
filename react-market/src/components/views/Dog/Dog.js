@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container";
 export default class Dog extends Component {
   render() {
     const { fetching, dog, onRequestDog, error } = this.props;
-    console.log("Dog");
+    // console.log("Dog");
     // debugger
     return (
       <React.Fragment>

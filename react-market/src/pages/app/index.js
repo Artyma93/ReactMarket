@@ -4,7 +4,7 @@ import Routing from "../../routes/route";
 
 export default class App extends React.Component {
   render() {
-    console.log("app");
+    // console.log("app");
     return (
       <Router>
         <Routing />

@@ -1,4 +1,4 @@
-import * as types from "./DogConstans";
+import * as types from "./WeatherforecastConstans";
 
 // export function showLoginForm(show) {
 //   return {
@@ -7,7 +7,7 @@ import * as types from "./DogConstans";
 //   };
 // }
 
-export function onRequestDog() {
+export function onRequestWeatherforecast() {
   return {
     type: types.API_CALL_REQUEST
   };
