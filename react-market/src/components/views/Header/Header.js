@@ -24,10 +24,13 @@ export default props => (
           <li>
             <Link to="/wfc/">WFC</Link>
           </li>
+          <li>
+            <Link to="/uc/">UC</Link>
+          </li>
         </ul>
       </div>
     </ToolBar>
-    <ScrollableTabsButtonAuto />
+    {/* <ScrollableTabsButtonAuto /> */}
   </AppBar>
   // <div className="header d-flex">
   //   <h3>

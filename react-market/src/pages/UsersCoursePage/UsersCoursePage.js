@@ -4,12 +4,10 @@ import HeaderContainer from "../../components/containers/Header";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
-import DogContainer from "../../components/containers/Dog";
-import WeatherforecastContainer from "../../components/containers/Weatherforecast";
+import WeatherforecastContainer from "../../components/containers/UsersCourse";
 
-export default class WeatherforecastPage extends Component {
+export default class UsersCoursePage extends Component {
   render() {
-    // console.log("LangingPage");
     return (
       <div>
         <Container maxWidth="xl">
@@ -20,7 +18,6 @@ export default class WeatherforecastPage extends Component {
           >
             <WeatherforecastContainer />
           </Typography>
-          {/* <DogContainer /> */}
         </Container>
       </div>
     );
