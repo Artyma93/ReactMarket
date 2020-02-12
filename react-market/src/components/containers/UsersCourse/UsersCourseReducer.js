@@ -14,7 +14,7 @@ export default function reducer(state = initialState, action) {
     case types.API_CALL_SUCCESS:
       return { ...state, fetching: false, usersCourseTable: action.usersCourseTable };
     case types.API_CALL_FAILURE:
-      return { ...state, fetching: false, dog: null, error: action.error };
+      return { ...state, fetching: false, usersCourseTable: null, error: action.error };
     default:
       return state;
   }

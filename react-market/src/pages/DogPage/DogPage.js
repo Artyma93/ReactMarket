@@ -3,7 +3,7 @@ import HeaderContainer from "../../components/containers/Header";
 // import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-
+import MainMiniDrawer from "../../components/views/MainMiniDrawer";
 import DogContainer from "../../components/containers/Dog";
 
 export default class DogPage extends Component {
@@ -12,7 +12,8 @@ export default class DogPage extends Component {
     return (
       <div>
         <Container maxWidth="xl">
-          <HeaderContainer />
+          <MainMiniDrawer />
+          {/* <HeaderContainer /> */}
           <Typography
             component="div"
             style={{ backgroundColor: "gray", height: "10000" }}

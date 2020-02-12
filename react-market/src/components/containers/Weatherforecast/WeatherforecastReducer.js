@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action) {
     case API_CALL_SUCCESS:
       return { ...state, fetching: false, weatherforecastTable: action.weatherforecastTable };
     case API_CALL_FAILURE:
-      return { ...state, fetching: false, dog: null, error: action.error };
+      return { ...state, fetching: false, weatherforecastTable: null, error: action.error };
     default:
       return state;
   }

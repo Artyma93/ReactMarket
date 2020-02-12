@@ -10,7 +10,7 @@ export default function* watcherSaga() {
 
 function fetchUsersCourse() {
   return axios
-    .get("https://localhost:44349/weatherforecast")
+    .get("https://social-network.samuraijs.com/api/1.0/users")
     .then(data => data);
 }
 

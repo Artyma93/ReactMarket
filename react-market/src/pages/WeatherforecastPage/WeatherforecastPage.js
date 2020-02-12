@@ -6,14 +6,15 @@ import Container from "@material-ui/core/Container";
 
 import DogContainer from "../../components/containers/Dog";
 import WeatherforecastContainer from "../../components/containers/Weatherforecast";
-
+import MainMiniDrawer from "../../components/views/MainMiniDrawer";
 export default class WeatherforecastPage extends Component {
   render() {
     // console.log("LangingPage");
     return (
       <div>
         <Container maxWidth="xl">
-          <HeaderContainer />
+          <MainMiniDrawer />
+          {/* <HeaderContainer /> */}
           <Typography
             component="div"
             style={{ backgroundColor: "gray", height: "10000" }}

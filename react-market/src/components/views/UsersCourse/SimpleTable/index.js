@@ -8,9 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-
 import Container from "@material-ui/core/Container";
-
 
 const useStyles = makeStyles({
   table: {
@@ -20,12 +18,7 @@ const useStyles = makeStyles({
 
 export default function SimpleTable(props) {
   const classes = useStyles();
-  const {
-    fetching,
-    usersCourseTable,
-    onRequestUsersCourse,
-    error
-  } = props;
+  const { fetching, usersCourseTable, onRequestUsersCourse, error } = props;
 
   return (
     <React.Fragment>
@@ -36,26 +29,26 @@ export default function SimpleTable(props) {
               <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell>date</TableCell>
-                    <TableCell>temperatureC</TableCell>
-                    <TableCell>temperatureF</TableCell>
-                    <TableCell>summary</TableCell>
+                    <TableCell align="center">ID</TableCell>
+                    <TableCell align="center">Names</TableCell>
+                    {/* <TableCell>Status</TableCell>
+                    <TableCell>Followed</TableCell> */}
                   </TableRow>
                 </TableHead>
-                <TableBody>
-                  {usersCourseTable.map(row => (
-                    <TableRow key={row.date}>
-                      <TableCell>{row.date}</TableCell>
-                      <TableCell>{row.temperatureC}</TableCell>
-                      <TableCell>{row.temperatureF}</TableCell>
-                      <TableCell>{row.summary}</TableCell>
+                <TableCell>
+                  {usersCourseTable.items.map(row => (
+                    <TableRow key={row.id}>
+                      <TableCell align="center">{row.id}</TableCell>
+                      <TableCell align="center">{row.name}</TableCell>
+                      {/* <TableCell>{row.status}</TableCell>
+                      <TableCell>{row.followed}</TableCell> */}
                     </TableRow>
                   ))}
-                </TableBody>
+                </TableCell>
               </Table>
             </TableContainer>
           ) : (
-            <p className="App-intro">Replace the React icon with a users!</p>
+            <p className="App-intro">Download Users</p>
           )}
 
           {fetching ? (

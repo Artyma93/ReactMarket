@@ -18,8 +18,17 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
+import LocalMallIcon from "@material-ui/icons/LocalMall";
+import WorkIcon from "@material-ui/icons/Work";
+import AccessibilityIcon from "@material-ui/icons/Accessibility";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+import BlurCircularIcon from '@material-ui/icons/BlurCircular';
+
+
+import { Link } from "react-router-dom";
+
 import MiniDrawer from "../MiniDrawer";
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 
 const drawerWidth = 240;
 
@@ -97,6 +106,33 @@ export default function MainMiniDrawer() {
     setOpen(false);
   };
 
+  const itemsMenu = {
+    items: [
+      {
+        name: "Бюджет",
+        icons: <WorkIcon />,
+        link: "/"
+      },
+      {
+        name: "ПФХД",
+        icons: <LocalMallIcon />,
+        link: "/dog/"
+      },
+      {
+        name: "Расчёт стоимости",
+        icons: <BlurCircularIcon />,
+        link: "/wfc/"
+      },
+      {
+        name: "РШР",
+        icons: <AccountBoxIcon />,
+        link: "/uc/"
+      }
+    ]
+  };
+
+  // debugger
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -146,18 +182,23 @@ export default function MainMiniDrawer() {
           </IconButton>
         </div>
         <Divider />
+
         <List>
-          {["Бюджет", "ПФХД", "Расчёт стоимости", "РШР"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+          {itemsMenu.items.map(item => (
+            <React.Fragment>
+              <Link to={item.link}>
+                <ListItem button key={item.name}>
+                  <ListItemIcon>{item.icons}</ListItemIcon>
+                  <ListItemText primary={item.name}></ListItemText>
+                </ListItem>
+              </Link>
+              <Divider />
+            </React.Fragment>
           ))}
         </List>
+
         <Divider />
-        <List>
+        {/* <List>
           {["All mail", "Trash", "Spam"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
@@ -166,15 +207,15 @@ export default function MainMiniDrawer() {
               <ListItemText primary={text} />
             </ListItem>
           ))}
-        </List>
+        </List> */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {/* <Box component="span" m={1}>
-          <MiniDrawer />
+          
         </Box> */}
 
-        {/* <Typography paragraph>
+        <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
           facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
@@ -196,7 +237,7 @@ export default function MainMiniDrawer() {
           tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
           nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
           accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography> */}
+        </Typography>
       </main>
     </div>
   );

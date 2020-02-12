@@ -15,7 +15,7 @@ export default class LangingPage extends Component {
     return (
       <div>
         <Container maxWidth="xl">
-          <HeaderContainer />
+          {/* <HeaderContainer /> */}
           <Typography
             component="div"
             style={{ backgroundColor: "gray", height: "10000" }}

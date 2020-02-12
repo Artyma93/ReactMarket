@@ -5,13 +5,14 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
 import WeatherforecastContainer from "../../components/containers/UsersCourse";
-
+import MainMiniDrawer from "../../components/views/MainMiniDrawer";
 export default class UsersCoursePage extends Component {
   render() {
     return (
       <div>
         <Container maxWidth="xl">
-          <HeaderContainer />
+          <MainMiniDrawer />
+          {/* <HeaderContainer /> */}
           <Typography
             component="div"
             style={{ backgroundColor: "gray", height: "10000" }}
