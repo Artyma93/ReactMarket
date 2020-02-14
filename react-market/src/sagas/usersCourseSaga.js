@@ -8,10 +8,18 @@ export default function* watcherSaga() {
   yield takeLatest(types.API_CALL_REQUEST, workerSaga);
 }
 
-function fetchUsersCourse() {
+function fetchUsersCourse(action) {
   return axios
-    .get("https://social-network.samuraijs.com/api/1.0/users")
+    .get(
+      `https://social-network.samuraijs.com/api/1.0/users?page=${20}&&count=${6}`
+    )
     .then(data => data);
+
+  // return axios
+  //   .get(
+  //     `https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&&count=${pageSize}`
+  //   )
+  //   .then(data => data);
 }
 
 // worker saga: makes the api call when watcher saga sees the action

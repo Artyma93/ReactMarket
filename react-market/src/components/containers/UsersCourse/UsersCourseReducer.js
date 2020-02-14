@@ -4,7 +4,10 @@ import * as types from "./UsersCourseConstans";
 const initialState = {
   fetching: false,
   usersCourseTable: null,
-  error: null
+  error: null,
+  pageSize: 5,
+  totalUsersCount: 51,
+  currentPage: 1
 };
 
 export default function reducer(state = initialState, action) {
