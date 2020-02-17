@@ -4,6 +4,7 @@ import LangingPage from "../pages/LandingPage/LangingPage";
 import DogPage from "../pages/DogPage/DogPage";
 import WeatherforecastPage from "../pages/WeatherforecastPage/WeatherforecastPage";
 import UsersCoursePage from "../pages/UsersCoursePage/UsersCoursePage";
+import UsersCourseAutoPage from "../pages/UsersCourseAutoPage/UsersCourseAutoPage";
 
 export default class Routing extends React.Component {
   render() {
@@ -16,6 +17,7 @@ export default class Routing extends React.Component {
           <Route path="/dog" component={DogPage} exact></Route>
           <Route path="/wfc" component={WeatherforecastPage} exact></Route>
           <Route path="/uc" component={UsersCoursePage} exact></Route>
+          <Route path="/uca" component={UsersCourseAutoPage} exact></Route>
           <Redirect to="/" />
         </Switch>
         {/* </main> */}

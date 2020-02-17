@@ -1,43 +1,15 @@
 import React from "react";
 import UsersCourse from "../../views/UsersCourse";
 import { connect } from "react-redux";
-import * as actions from "./UsersCourseActions";
+import * as actions from "./UsersCourseAutoActions";
 // import { bindActionCreators } from "redux";
 // import axios from "axios";
 import { bindActionCreators } from "redux";
 
-class UsersCourseContainer extends React.Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   axios
-  //     .get("https://social-network.samuraijs.com/api/1.0/users")
-  //     .then(response => {
-  //       this.props.usersCourseTable(response.data.items);
-  //     });
-  // }
-
-  // constructor(props) {
-  //   super(props);
-  //   // actions.onRequestUsersCourse();
-  //   // store.actions.onRequestUsersCourse();
-
-  // }
+class UsersCourseAutoContainer extends React.Component {
 
   componentDidMount() {
-    this.props.onRequestUsersCourse();
-    // const store = this.props.store
-    // const {dispatch} = this.props.store;
-    //  const act = store.bindActionCreators(actions.onRequestUsersCourse, dispatch);
-    //  act();
-    // axios
-    //   .get("https://social-network.samuraijs.com/api/1.0/users")
-    //   .then(response => {
-    //     this.props.usersCourseTable(response.data.items);
-    //   });
-    // actions.onRequestUsersCourse();
-    // const { dispatch } = this.props;
-    // dispatch({ type: "API_CALL_REQUEST_UC" });
+    this.props.onRequestUsersCourse(this.props.currentPage);
   }
   render() {
     const {
@@ -102,15 +74,15 @@ const mapStateToProps = ({
 //   };
 // };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onRequestUsersCourse: page => dispatch(actions.fetchUsersCourse(page))
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    onRequestUsersCourse: page => dispatch(actions.fetchUsersCourse(page))
+  };
+};
 
-export default connect(mapStateToProps, actions)(UsersCourseContainer);
+// export default connect(mapStateToProps, actions)(UsersCourseAutoContainer);
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(UsersCourseContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UsersCourseAutoContainer);

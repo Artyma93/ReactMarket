@@ -1,4 +1,4 @@
-import * as types from "./UsersCourseConstans";
+import * as types from "./UsersCourseAutoConstans";
 
 // reducer with initial state
 const initialState = {

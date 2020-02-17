@@ -22,8 +22,7 @@ import LocalMallIcon from "@material-ui/icons/LocalMall";
 import WorkIcon from "@material-ui/icons/Work";
 import AccessibilityIcon from "@material-ui/icons/Accessibility";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import BlurCircularIcon from '@material-ui/icons/BlurCircular';
-
+import BlurCircularIcon from "@material-ui/icons/BlurCircular";
 
 import { Link } from "react-router-dom";
 
@@ -127,6 +126,11 @@ export default function MainMiniDrawer() {
         name: "РШР",
         icons: <AccountBoxIcon />,
         link: "/uc/"
+      },
+      {
+        name: "РШР",
+        icons: <AccountBoxIcon />,
+        link: "/uca/"
       }
     ]
   };
@@ -216,10 +220,12 @@ export default function MainMiniDrawer() {
         </Box> */}
 
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt
         </Typography>
         <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
+          ullamcorper eget nulla
         </Typography>
       </main>
     </div>

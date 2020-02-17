@@ -4,9 +4,9 @@ import HeaderContainer from "../../components/containers/Header";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
-import UsersCourseContainer from "../../components/containers/UsersCourse";
+import UsersCourseAutoContainer from "../../components/containers/UsersCourseAuto";
 import MainMiniDrawer from "../../components/views/MainMiniDrawer";
-export default class UsersCoursePage extends Component {
+export default class UsersCourseAutoPage extends Component {
   render() {
     return (
       <div>
@@ -17,7 +17,7 @@ export default class UsersCoursePage extends Component {
             component="div"
             style={{ backgroundColor: "gray", height: "10000" }}
           >
-            <UsersCourseContainer />
+            <UsersCourseAutoContainer />
           </Typography>
         </Container>
       </div>
