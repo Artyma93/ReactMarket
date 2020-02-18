@@ -123,12 +123,12 @@ export default function MainMiniDrawer() {
         link: "/wfc/"
       },
       {
-        name: "РШР",
+        name: "Загрузка 1",
         icons: <AccountBoxIcon />,
         link: "/uc/"
       },
       {
-        name: "РШР",
+        name: "Загрузка 2",
         icons: <AccountBoxIcon />,
         link: "/uca/"
       }
