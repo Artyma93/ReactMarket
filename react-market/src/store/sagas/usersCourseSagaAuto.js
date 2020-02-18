@@ -1,9 +1,12 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 // import * as types from "../components/containers/Dog/DogConstans";
-import * as types from "../components/containers/UsersCourseAuto/UsersCourseAutoConstans";
+import * as types from "../../components/containers/UsersCourseAuto/UsersCourseAutoConstans";
 
-import * as actions from "../components/containers/UsersCourseAuto/UsersCourseAutoActions";
+import * as actions from "../../components/containers/UsersCourseAuto/UsersCourseAutoActions";
+
+import * as actionTypes from "../actions/actionTypes";
+import * as actions2 from '../actions';
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export default function* watcherSaga() {

@@ -1,13 +1,13 @@
 import React from "react";
 import UsersCourse from "../../views/UsersCourse";
 import { connect } from "react-redux";
-import * as actions from "./UsersCourseAutoActions";
+// import * as actions from "./UsersCourseAutoActions";
+import * as actions from "../../../store/actions";
 // import { bindActionCreators } from "redux";
 // import axios from "axios";
 import { bindActionCreators } from "redux";
 
 class UsersCourseAutoContainer extends React.Component {
-
   componentDidMount() {
     this.props.onRequestUsersCourse(this.props.currentPage);
   }
