@@ -44,3 +44,22 @@ export const fetchUsersCourseAutoRequest = () => {
     type: types.UC_AUTO_API_CALL_REQUEST
   };
 };
+
+export const fetchUsersCourseAutoSuccess = () => {
+  return {
+    type: types.UC_AUTO_API_CALL_SUCCESS
+  };
+};
+
+export const fetchUsersCourseAutoFail = () => {
+  return {
+    type: types.UC_AUTO_API_CALL_FAILURE
+  };
+};
+
+export const fetchUsersCourseAuto = page => {
+  return {
+    type: types.UC_AUTO_API_CALL_FETCH,
+    page
+  };
+};

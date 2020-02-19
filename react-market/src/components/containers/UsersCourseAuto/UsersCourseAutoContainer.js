@@ -75,7 +75,7 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestUsersCourse: page => dispatch(actions.fetchUsersCourse(page))
+    onRequestUsersCourse: page => dispatch(actions.fetchUsersCourseAuto(page))
   };
 };
 

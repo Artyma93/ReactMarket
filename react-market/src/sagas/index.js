@@ -1,10 +1,11 @@
 import { all } from "redux-saga/effects";
 
-import dogSaga from "./dogSaga";
+import dogSaga from "../components/containers/Dog/DogSaga"
 // import statsSaga from "./statsSaga";
-import weatherforecastSaga from "./weatherforecastSaga";
-import usersCourseSaga from "./usersCourseSaga";
+import weatherforecastSaga from "../components/containers/Weatherforecast/WeatherforecastSaga"
+import usersCourseSaga from "../components/containers/UsersCourse/UsersCourseSaga"
+import usersCourseAutoSaga from "../components/containers/UsersCourseAuto/UsersCourseAutoSaga"
 
 export default function* rootSaga() {
-  yield all([dogSaga(), weatherforecastSaga(), usersCourseSaga()]);
+  yield all([dogSaga(), weatherforecastSaga(), usersCourseSaga(), usersCourseAutoSaga()]);
 }
