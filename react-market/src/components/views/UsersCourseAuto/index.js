@@ -16,6 +16,14 @@ export default class UsersCourseAuto extends Component {
     } = this.props;
 
     const pagesCount = Math.ceil(totalUsersCount / pageSize);
+    console.log(
+      "totalUsersCount: " +
+        totalUsersCount +
+        " pageSize: " +
+        pageSize +
+        " pagesCount: " +
+        pagesCount
+    );
     const pages = [];
     for (let i = 1; i <= pagesCount; i++) {
       pages.push(i);
@@ -28,7 +36,10 @@ export default class UsersCourseAuto extends Component {
             <div>
               {pages.map(p => {
                 return (
-                  <span className={currentPage === p && styles.selectedPage}>
+                  <span
+                    className={currentPage === p && styles.selectedPage}
+                    onClick={() => {this.props.setCurrentPage(p)}}
+                  >
                     {p}
                   </span>
                 );

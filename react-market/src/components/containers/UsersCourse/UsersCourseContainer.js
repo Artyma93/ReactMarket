@@ -25,7 +25,7 @@ class UsersCourseContainer extends React.Component {
   // }
 
   componentDidMount() {
-    this.props.onRequestUsersCourse();
+    // this.props.onRequestUsersCourse();
     // const store = this.props.store
     // const {dispatch} = this.props.store;
     //  const act = store.bindActionCreators(actions.onRequestUsersCourse, dispatch);
@@ -86,13 +86,13 @@ const mapStateToProps = ({
   };
 };
 
-// const mapDispatchToProps = dispatch => {
-//   const { onRequestUsersCourse } = bindActionCreators(actions, dispatch);
+const mapDispatchToProps = dispatch => {
+  const { onRequestUsersCourse } = bindActionCreators(actions, dispatch);
 
-//   return {
-//     onRequestUsersCourse
-//   };
-// };
+  return {
+    onRequestUsersCourse
+  };
+};
 
 // const mapDispatchToProps = dispatch => {
 //   // const { onRequestUsersCoursePagination } = bindActionCreators(actions, dispatch);
@@ -108,9 +108,9 @@ const mapStateToProps = ({
 //   };
 // };
 
-export default connect(mapStateToProps, actions)(UsersCourseContainer);
+// export default connect(mapStateToProps, actions)(UsersCourseContainer);
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(UsersCourseContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UsersCourseContainer);

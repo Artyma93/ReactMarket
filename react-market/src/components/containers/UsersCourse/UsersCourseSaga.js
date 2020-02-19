@@ -14,7 +14,6 @@ function fetchUsersCourse() {
       `https://social-network.samuraijs.com/api/1.0/users?page=${20}&&count=${6}`
     )
     .then(data => data);
-
 }
 
 // function fetchUsersCourse(action) {

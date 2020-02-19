@@ -35,16 +35,14 @@ export default function SimpleTable(props) {
                     <TableCell>Followed</TableCell> */}
                   </TableRow>
                 </TableHead>
-                <TableCell>
+                <TableBody>
                   {usersCourseTable.items.map(row => (
-                    <TableRow key={row.id}>
-                      <TableCell align="center">{row.id}</TableCell>
-                      <TableCell align="center">{row.name}</TableCell>
-                      {/* <TableCell>{row.status}</TableCell>
-                      <TableCell>{row.followed}</TableCell> */}
-                    </TableRow>
+                        <TableRow key={row.id}>
+                          <TableCell align="center">{row.id}</TableCell>
+                          <TableCell align="center">{row.name}</TableCell>
+                        </TableRow>
                   ))}
-                </TableCell>
+                </TableBody>
               </Table>
             </TableContainer>
           ) : (
@@ -54,7 +52,7 @@ export default function SimpleTable(props) {
           {fetching ? (
             <button disabled>Fetching...</button>
           ) : (
-            <button onClick={onRequestUsersCourse(21)}>
+            <button onClick={onRequestUsersCourse}>
               Request a UsersCourse
             </button>
           )}
@@ -67,3 +65,4 @@ export default function SimpleTable(props) {
     </React.Fragment>
   );
 }
+

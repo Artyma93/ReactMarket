@@ -73,9 +73,19 @@ const mapStateToProps = ({
 //   };
 // };
 
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     onRequestUsersCourse: page => dispatch(actions.fetchUsersCourseAuto(page))
+//   };
+// };
+
 const mapDispatchToProps = dispatch => {
+  const { fetchUsersCourseAuto } = bindActionCreators(actions, dispatch);
   return {
-    onRequestUsersCourse: page => dispatch(actions.fetchUsersCourseAuto(page))
+    onRequestUsersCourse: fetchUsersCourseAuto,
+    setCurrentPage: pageNumber => {
+      dispatch(actions.setCurrentPage(pageNumber));
+    }
   };
 };
 

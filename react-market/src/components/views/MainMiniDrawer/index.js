@@ -18,6 +18,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
+import UsersCourseAutoContainer from "../../containers/UsersCourseAuto";
+
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 import WorkIcon from "@material-ui/icons/Work";
 import AccessibilityIcon from "@material-ui/icons/Accessibility";
@@ -92,10 +94,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function MainMiniDrawer() {
+export default function MainMiniDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+
+  const { userCource } = props;
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -202,30 +206,16 @@ export default function MainMiniDrawer() {
         </List>
 
         <Divider />
-        {/* <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
+
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {/* <Box component="span" m={1}>
-          
-        </Box> */}
 
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla
+        <Typography
+          component="div"
+          style={{ backgroundColor: "gray", height: "10000" }}
+        >
+          {userCource}
         </Typography>
       </main>
     </div>

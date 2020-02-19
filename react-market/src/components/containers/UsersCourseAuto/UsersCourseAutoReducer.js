@@ -7,8 +7,8 @@ const initialState = {
   error: null,
   pageSize: 5,
   totalUsersCount: 51,
-  currentPage: 1,
-  pageFetch: 1
+  currentPage: 1
+  // pageFetch: 1
 };
 
 export default function reducer(state = initialState, action) {
@@ -22,8 +22,8 @@ export default function reducer(state = initialState, action) {
         usersCourseTable: action.usersCourseTable,
         pageSize: action.pageSize,
         totalUsersCount: action.totalUsersCount,
-        currentPage: action.currentPage,
-        pageFetch: action.page
+        currentPage: action.currentPage
+        // pageFetch: action.pageFetch
       };
     case types.UC_AUTO_API_CALL_FAILURE:
       return {
@@ -31,6 +31,11 @@ export default function reducer(state = initialState, action) {
         fetching: false,
         usersCourseTable: null,
         error: action.error
+      };
+    case types.UC_AUTO_SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.currentPage
       };
     default:
       return state;

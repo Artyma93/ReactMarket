@@ -11,13 +11,13 @@ export default class UsersCourseAutoPage extends Component {
     return (
       <div>
         <Container maxWidth="xl">
-          <MainMiniDrawer />
+          <MainMiniDrawer userCource={<UsersCourseAutoContainer />} />
           {/* <HeaderContainer /> */}
           <Typography
             component="div"
             style={{ backgroundColor: "gray", height: "10000" }}
           >
-            <UsersCourseAutoContainer />
+            {/* <UsersCourseAutoContainer /> */}
           </Typography>
         </Container>
       </div>
