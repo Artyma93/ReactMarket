@@ -7,7 +7,6 @@ import * as actions from "./UsersCourseAutoActions";
 import { bindActionCreators } from "redux";
 
 class UsersCourseAutoContainer extends React.Component {
-
   componentDidMount() {
     this.props.onRequestUsersCourse(this.props.currentPage);
   }
@@ -39,7 +38,7 @@ class UsersCourseAutoContainer extends React.Component {
 }
 
 const mapStateToProps = ({
-  usersCourseState: {
+  usersCourseAutoState: {
     fetching,
     usersCourseTable,
     error,

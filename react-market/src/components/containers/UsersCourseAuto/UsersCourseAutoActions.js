@@ -2,7 +2,7 @@ import * as types from "./UsersCourseAutoConstans";
 
 export function onRequestUsersCourse() {
   return {
-    type: types.API_CALL_REQUEST,
+    type: types.API_CALL_REQUEST
   };
 }
 
@@ -32,10 +32,15 @@ export function onRequestUsersCoursePaginationParam(
   };
 }
 
-
-export const fetchUsersCourse = (page=21) => {
+export const fetchUsersCourse = (page = 21) => {
   return {
     type: types.FETCH_USERSCOURSE,
     page
-  }
-}
+  };
+};
+
+export const fetchUsersCourseAutoRequest = () => {
+  return {
+    type: types.UC_AUTO_API_CALL_REQUEST
+  };
+};
