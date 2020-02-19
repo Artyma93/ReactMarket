@@ -18,7 +18,8 @@ class UsersCourseAutoContainer extends React.Component {
       error,
       pageSize,
       totalUsersCount,
-      currentPage
+      currentPage,
+      setCurrentPage
     } = this.props;
 
     return (
@@ -31,6 +32,7 @@ class UsersCourseAutoContainer extends React.Component {
           pageSize={pageSize}
           totalUsersCount={totalUsersCount}
           currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
         />
       </React.Fragment>
     );
@@ -44,7 +46,7 @@ const mapStateToProps = ({
     error,
     pageSize,
     totalUsersCount,
-    currentPage
+    currentPage,
   }
 }) => {
   return {
@@ -53,7 +55,7 @@ const mapStateToProps = ({
     error: error,
     pageSize: pageSize,
     totalUsersCount: totalUsersCount,
-    currentPage: currentPage
+    currentPage: currentPage,
   };
 };
 

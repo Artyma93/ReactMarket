@@ -12,7 +12,8 @@ export default class UsersCourseAuto extends Component {
       error,
       pageSize,
       totalUsersCount,
-      currentPage
+      currentPage,
+      setCurrentPage
     } = this.props;
 
     const pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -38,7 +39,7 @@ export default class UsersCourseAuto extends Component {
                 return (
                   <span
                     className={currentPage === p && styles.selectedPage}
-                    onClick={() => {this.props.setCurrentPage(p)}}
+                    onClick={() => {setCurrentPage(p)}}
                   >
                     {p}
                   </span>
