@@ -1,10 +1,10 @@
 import * as types from "./UsersCourseAutoConstans";
 
-export function onRequestUsersCourse() {
-  return {
-    type: types.API_CALL_REQUEST
-  };
-}
+// export function onRequestUsersCourse() {
+//   return {
+//     type: types.API_CALL_REQUEST
+//   };
+// }
 
 // export function onRequestUsersCourse() {
 //   return {
@@ -12,25 +12,25 @@ export function onRequestUsersCourse() {
 //   };
 // }
 
-export function onRequestUsersCoursePagination(payload) {
-  return {
-    type: types.API_CALL_REQUEST,
-    payload: payload
-  };
-}
+// export function onRequestUsersCoursePagination(payload) {
+//   return {
+//     type: types.API_CALL_REQUEST,
+//     payload: payload
+//   };
+// }
 
-export function onRequestUsersCoursePaginationParam(
-  pageSize,
-  totalUsersCount,
-  currentPage
-) {
-  return {
-    type: types.API_CALL_REQUEST,
-    pageSize: pageSize,
-    totalUsersCount: totalUsersCount,
-    currentPage: currentPage
-  };
-}
+// export function onRequestUsersCoursePaginationParam(
+//   pageSize,
+//   totalUsersCount,
+//   currentPage
+// ) {
+//   return {
+//     type: types.API_CALL_REQUEST,
+//     pageSize: pageSize,
+//     totalUsersCount: totalUsersCount,
+//     currentPage: currentPage
+//   };
+// }
 
 export const fetchUsersCourse = (page = 21) => {
   return {

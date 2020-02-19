@@ -7,7 +7,7 @@ import * as actions from "./UsersCourseAutoActions";
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export default function* watcherSaga() {
-  yield takeLatest(types.API_CALL_REQUEST, workerSaga);
+  yield takeLatest(types.UC_AUTO_API_CALL_FETCH, workerSaga);
 }
 
 function fetchUsersCourse(action) {
@@ -21,10 +21,10 @@ function fetchUsersCourse(action) {
 // worker saga: makes the api call when watcher saga sees the action
 // action.page
 function* workerSaga(action) {
-  yield put(actions.fetchUsersCourseAutoRequest());
+  yield call(actions.fetchUsersCourseAutoRequest());
   try {
     console.log(action.page)
-    const response = yield axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${20}&&count=${6}`);
+    const response = yield axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${action.page}&&count=${6}`);
     const usersCourseTable = response.data;
     const totalUsersCount = usersCourseTable.totalCount;
 
@@ -34,16 +34,17 @@ function* workerSaga(action) {
 
     // dispatch a success action to the store with the new dog
     yield put({
-      type: types.API_CALL_SUCCESS,
+      type: types.UC_AUTO_API_CALL_SUCCESS,
       usersCourseTable,
       pageSize: 100,
       totalUsersCount: totalUsersCount,
-      currentPage: action.page
+      currentPage: action.page,
+      pageFetch: action.page
     });
   } catch (error) {
     // dispatch a failure action to the store with the error
     yield put({
-      type: types.API_CALL_FAILURE,
+      type: types.UC_AUTO_API_CALL_FAILURE,
       error
     });
   }

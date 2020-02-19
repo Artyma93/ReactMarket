@@ -1,5 +1,5 @@
 import React from "react";
-import UsersCourse from "../../views/UsersCourse";
+import UsersCourseAuto from "../../views/UsersCourseAuto";
 import { connect } from "react-redux";
 import * as actions from "./UsersCourseAutoActions";
 // import { bindActionCreators } from "redux";
@@ -8,7 +8,7 @@ import { bindActionCreators } from "redux";
 
 class UsersCourseAutoContainer extends React.Component {
   componentDidMount() {
-    this.props.onRequestUsersCourse(this.props.currentPage);
+    // this.props.onRequestUsersCourse(this.props.currentPage);
   }
   render() {
     const {
@@ -23,7 +23,7 @@ class UsersCourseAutoContainer extends React.Component {
 
     return (
       <React.Fragment>
-        <UsersCourse
+        <UsersCourseAuto
           fetching={fetching}
           usersCourseTable={usersCourseTable}
           onRequestUsersCourse={onRequestUsersCourse}
