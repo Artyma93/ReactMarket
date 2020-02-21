@@ -4,6 +4,9 @@ import SimpleTable from "./SimpleTable";
 import styles from "./usersCourseAuto.module.css";
 
 export default class UsersCourseAuto extends Component {
+  onPageChanged = pageNumber => {
+    this.props.setCurrentPage(pageNumber);
+  };
   render() {
     const {
       fetching,
@@ -12,19 +15,13 @@ export default class UsersCourseAuto extends Component {
       error,
       pageSize,
       totalUsersCount,
-      currentPage,
-      setCurrentPage
+      currentPage
     } = this.props;
 
+    const { onPageChanged } = this;
+
     const pagesCount = Math.ceil(totalUsersCount / pageSize);
-    console.log(
-      "totalUsersCount: " +
-        totalUsersCount +
-        " pageSize: " +
-        pageSize +
-        " pagesCount: " +
-        pagesCount
-    );
+
     const pages = [];
     for (let i = 1; i <= pagesCount; i++) {
       pages.push(i);
@@ -39,7 +36,9 @@ export default class UsersCourseAuto extends Component {
                 return (
                   <span
                     className={currentPage === p && styles.selectedPage}
-                    onClick={() => {setCurrentPage(p)}}
+                    onClick={e => {
+                      onPageChanged(p);
+                    }}
                   >
                     {p}
                   </span>
@@ -51,6 +50,7 @@ export default class UsersCourseAuto extends Component {
               usersCourseTable={usersCourseTable}
               onRequestUsersCourse={onRequestUsersCourse}
               error={error}
+              currentPage={currentPage}
             />
           </div>
         </Container>

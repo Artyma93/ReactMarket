@@ -6,7 +6,7 @@ const initialState = {
   usersCourseTable: null,
   error: null,
   pageSize: 5,
-  totalUsersCount: 51,
+  totalUsersCount: 1,
   currentPage: 1
   // pageFetch: 1
 };
@@ -22,7 +22,7 @@ export default function reducer(state = initialState, action) {
         usersCourseTable: action.usersCourseTable,
         pageSize: action.pageSize,
         totalUsersCount: action.totalUsersCount,
-        currentPage: action.currentPage
+        // currentPage: action.currentPage
         // pageFetch: action.pageFetch
       };
     case types.UC_AUTO_API_CALL_FAILURE:

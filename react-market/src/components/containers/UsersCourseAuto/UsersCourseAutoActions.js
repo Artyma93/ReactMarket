@@ -12,7 +12,7 @@ export const fetchUsersCourseAutoSuccess = response => {
     usersCourseTable: response.data,
     totalUsersCount: response.data.totalCount,
     pageSize: 100,
-    currentPage: 2
+    // currentPage: 2
   };
 };
 
@@ -22,10 +22,13 @@ export const fetchUsersCourseAutoFail = () => {
   };
 };
 
-export const fetchUsersCourseAuto = page => {
+export const fetchUsersCourseAuto = (page) => {
   return {
     type: types.UC_AUTO_API_CALL_FETCH,
-    page: 23
+    // page: 1,
+    // page: page,
+    // page: {...page}
+    page
   };
 };
 

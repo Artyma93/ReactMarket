@@ -18,7 +18,18 @@ const useStyles = makeStyles({
 
 export default function SimpleTable(props) {
   const classes = useStyles();
-  const { fetching, usersCourseTable, onRequestUsersCourse, error } = props;
+  const {
+    fetching,
+    usersCourseTable,
+    onRequestUsersCourse,
+    error,
+    currentPage
+  } = props;
+
+  // console.log("currentPage: " + currentPage);
+  const onRequestUsersCourseParam = e => {
+    onRequestUsersCourse(currentPage);
+  };
 
   return (
     <React.Fragment>
@@ -37,10 +48,10 @@ export default function SimpleTable(props) {
                 </TableHead>
                 <TableBody>
                   {usersCourseTable.items.map(row => (
-                        <TableRow key={row.id}>
-                          <TableCell align="center">{row.id}</TableCell>
-                          <TableCell align="center">{row.name}</TableCell>
-                        </TableRow>
+                    <TableRow key={row.id}>
+                      <TableCell align="center">{row.id}</TableCell>
+                      <TableCell align="center">{row.name}</TableCell>
+                    </TableRow>
                   ))}
                 </TableBody>
               </Table>
@@ -49,20 +60,19 @@ export default function SimpleTable(props) {
             <p className="App-intro">Download Users</p>
           )}
 
-          {fetching ? (
+          {/* {fetching ? (
             <button disabled>Fetching...</button>
           ) : (
-            <button onClick={onRequestUsersCourse}>
+            <button onClick={onRequestUsersCourseParam}>
               Request a UsersCourse
             </button>
           )}
 
           {error && (
             <p style={{ color: "red" }}>Uh oh - something went wrong!</p>
-          )}
+          )} */}
         </div>
       </Container>
     </React.Fragment>
   );
 }
-

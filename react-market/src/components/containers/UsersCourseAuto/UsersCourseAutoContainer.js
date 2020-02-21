@@ -9,6 +9,7 @@ import { bindActionCreators } from "redux";
 class UsersCourseAutoContainer extends React.Component {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
+    this.props.setCurrentPage(1);
   }
   render() {
     const {
@@ -46,7 +47,7 @@ const mapStateToProps = ({
     error,
     pageSize,
     totalUsersCount,
-    currentPage,
+    currentPage
   }
 }) => {
   return {
@@ -55,7 +56,7 @@ const mapStateToProps = ({
     error: error,
     pageSize: pageSize,
     totalUsersCount: totalUsersCount,
-    currentPage: currentPage,
+    currentPage: currentPage
   };
 };
 
@@ -81,13 +82,25 @@ const mapStateToProps = ({
 //   };
 // };
 
+// Этот вариант тоже работает
+// const mapDispatchToProps = dispatch => {
+//   const { fetchUsersCourseAuto } = bindActionCreators(actions, dispatch);
+//   return {
+//     onRequestUsersCourse: fetchUsersCourseAuto,
+//     setCurrentPage: pageNumber => {
+//       dispatch(actions.setCurrentPage(pageNumber));
+//     }
+//   };
+// };
+
 const mapDispatchToProps = dispatch => {
-  const { fetchUsersCourseAuto } = bindActionCreators(actions, dispatch);
+  const { fetchUsersCourseAuto, setCurrentPage } = bindActionCreators(
+    actions,
+    dispatch
+  );
   return {
     onRequestUsersCourse: fetchUsersCourseAuto,
-    setCurrentPage: pageNumber => {
-      dispatch(actions.setCurrentPage(pageNumber));
-    }
+    setCurrentPage: setCurrentPage
   };
 };
 
