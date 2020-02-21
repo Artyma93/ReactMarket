@@ -15,7 +15,6 @@ class UsersCourseAutoContainer extends React.Component {
     const {
       fetching,
       usersCourseTable,
-      onRequestUsersCourse,
       error,
       pageSize,
       totalUsersCount,
@@ -28,7 +27,6 @@ class UsersCourseAutoContainer extends React.Component {
         <UsersCourseAuto
           fetching={fetching}
           usersCourseTable={usersCourseTable}
-          onRequestUsersCourse={onRequestUsersCourse}
           error={error}
           pageSize={pageSize}
           totalUsersCount={totalUsersCount}
@@ -94,12 +92,12 @@ const mapStateToProps = ({
 // };
 
 const mapDispatchToProps = dispatch => {
-  const { fetchUsersCourseAuto, setCurrentPage } = bindActionCreators(
+  const { setCurrentPage } = bindActionCreators(
     actions,
     dispatch
   );
   return {
-    onRequestUsersCourse: fetchUsersCourseAuto,
+
     setCurrentPage: setCurrentPage
   };
 };

@@ -21,15 +21,12 @@ export default function SimpleTable(props) {
   const {
     fetching,
     usersCourseTable,
-    onRequestUsersCourse,
     error,
     currentPage
   } = props;
 
   // console.log("currentPage: " + currentPage);
-  const onRequestUsersCourseParam = e => {
-    onRequestUsersCourse(currentPage);
-  };
+
 
   return (
     <React.Fragment>

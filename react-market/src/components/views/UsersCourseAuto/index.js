@@ -11,7 +11,6 @@ export default class UsersCourseAuto extends Component {
     const {
       fetching,
       usersCourseTable,
-      onRequestUsersCourse,
       error,
       pageSize,
       totalUsersCount,
@@ -48,7 +47,6 @@ export default class UsersCourseAuto extends Component {
             <SimpleTable
               fetching={fetching}
               usersCourseTable={usersCourseTable}
-              onRequestUsersCourse={onRequestUsersCourse}
               error={error}
               currentPage={currentPage}
             />
