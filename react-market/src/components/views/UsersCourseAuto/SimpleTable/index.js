@@ -10,6 +10,9 @@ import Paper from "@material-ui/core/Paper";
 
 import Container from "@material-ui/core/Container";
 
+import Avatar from "@material-ui/core/Avatar";
+// import { makeStyles } from '@material-ui/core/styles';
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650
@@ -18,15 +21,9 @@ const useStyles = makeStyles({
 
 export default function SimpleTable(props) {
   const classes = useStyles();
-  const {
-    fetching,
-    usersCourseTable,
-    error,
-    currentPage
-  } = props;
+  const { fetching, usersCourseTable, error, currentPage } = props;
 
   // console.log("currentPage: " + currentPage);
-
 
   return (
     <React.Fragment>
@@ -39,6 +36,7 @@ export default function SimpleTable(props) {
                   <TableRow>
                     <TableCell align="center">ID</TableCell>
                     <TableCell align="center">Names</TableCell>
+                    <TableCell align="center">Photo</TableCell>
                     {/* <TableCell>Status</TableCell>
                     <TableCell>Followed</TableCell> */}
                   </TableRow>
@@ -48,6 +46,9 @@ export default function SimpleTable(props) {
                     <TableRow key={row.id}>
                       <TableCell align="center">{row.id}</TableCell>
                       <TableCell align="center">{row.name}</TableCell>
+                      <TableCell align="center">
+                        <Avatar src={row.photos.small} />
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

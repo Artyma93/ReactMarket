@@ -38,3 +38,10 @@ export const setCurrentPage = currentPage => {
     currentPage: currentPage
   };
 };
+
+export const setTotalUsersCount = totalCount => {
+  return {
+    type: types.UC_AUTO_SET_CURRENT_PAGE,
+    totalCount: totalCount
+  };
+};

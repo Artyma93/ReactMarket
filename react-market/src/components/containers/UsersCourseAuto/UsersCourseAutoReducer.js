@@ -6,7 +6,7 @@ const initialState = {
   usersCourseTable: null,
   error: null,
   pageSize: 5,
-  totalUsersCount: 1,
+  totalUsersCount: 0,
   currentPage: 1
   // pageFetch: 1
 };
@@ -21,7 +21,7 @@ export default function reducer(state = initialState, action) {
         fetching: false,
         usersCourseTable: action.usersCourseTable,
         pageSize: action.pageSize,
-        totalUsersCount: action.totalUsersCount,
+        totalUsersCount: action.totalUsersCount
         // currentPage: action.currentPage
         // pageFetch: action.pageFetch
       };
@@ -37,6 +37,12 @@ export default function reducer(state = initialState, action) {
         ...state,
         currentPage: action.currentPage
       };
+    case types.UC_AUTO_SET_USERS_COUNT:
+      return {
+        ...state,
+        totalUsersCount: action.totalUsersCount
+      };
+
     default:
       return state;
   }

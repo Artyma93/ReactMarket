@@ -19,7 +19,8 @@ class UsersCourseAutoContainer extends React.Component {
       pageSize,
       totalUsersCount,
       currentPage,
-      setCurrentPage
+      setCurrentPage,
+      setTotalUsersCount
     } = this.props;
 
     return (
@@ -32,6 +33,7 @@ class UsersCourseAutoContainer extends React.Component {
           totalUsersCount={totalUsersCount}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
+          setTotalUsersCount={setTotalUsersCount}
         />
       </React.Fragment>
     );
@@ -92,13 +94,13 @@ const mapStateToProps = ({
 // };
 
 const mapDispatchToProps = dispatch => {
-  const { setCurrentPage } = bindActionCreators(
+  const { setCurrentPage, setTotalUsersCount } = bindActionCreators(
     actions,
     dispatch
   );
   return {
-
-    setCurrentPage: setCurrentPage
+    setCurrentPage: setCurrentPage,
+    setTotalUsersCount: setTotalUsersCount
   };
 };
 
