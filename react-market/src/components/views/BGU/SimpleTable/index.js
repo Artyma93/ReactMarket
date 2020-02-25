@@ -10,6 +10,8 @@ import Paper from "@material-ui/core/Paper";
 
 import Container from "@material-ui/core/Container";
 
+import "./SimpleTable.css";
+
 import Avatar from "@material-ui/core/Avatar";
 // import { makeStyles } from '@material-ui/core/styles';
 
@@ -26,6 +28,12 @@ export default function SimpleTable(props) {
   const { fetching, budget, error, currentPage } = props;
 
   // console.log("currentPage: " + currentPage);
+
+  function numberWithSpaces(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return parts.join(",");
+  }
 
   return (
     <React.Fragment>
@@ -48,14 +56,22 @@ export default function SimpleTable(props) {
                       <TableCell align="center">{row.Academy}</TableCell>
                       <TableCell align="center">{row.KindActivity}</TableCell>
                       <TableCell align="center">{row.BudgetSP}</TableCell>
-                      <TableCell align="center">{row.Rub}</TableCell>
+                      {/* <TableCell align="center">{row.Rub}</TableCell> */}
+                      {/* <TableCell align="right">{row.Rub.toFixed(2)}</TableCell> */}
+                      {/* <TableCell align="center">{row.Rub.toLocaleString()}</TableCell> */}
+                      <TableCell align="right">
+                        <div className="cellNum">
+                          {/* {numberWithSpaces(row.Rub.toFixed(2))} */}
+                          {numberWithSpaces(parseFloat(row.Rub).toFixed(2))}
+                        </div>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
             </TableContainer>
           ) : (
-            <p className="App-intro">Download Users</p>
+            <p className="App-intro">Загрузка бюджетов</p>
           )}
 
           {/* {fetching ? (

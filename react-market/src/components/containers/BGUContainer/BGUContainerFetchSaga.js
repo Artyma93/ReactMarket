@@ -20,8 +20,10 @@ function* workerSaga() {
     const response = yield axios
       .get("http://localhost:3000/bgu.json")
       .then(data => data);
-    console.log("response: ")
-    console.log(response)
+    console.log("response: ");
+    console.log(response);
+
+
     yield put(actions.fetchBGUSuccess(response));
   } catch (error) {
     // console.log(error)
