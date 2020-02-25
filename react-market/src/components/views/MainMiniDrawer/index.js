@@ -140,6 +140,11 @@ export default function MainMiniDrawer(props) {
         name: "UC Profile",
         icons: <AccountBoxIcon />,
         link: "/ucp/"
+      },
+      {
+        name: "BGU",
+        icons: <InboxIcon />,
+        link: "/bgu/"
       }
     ]
   };

@@ -7,6 +7,8 @@ import UsersCoursePage from "../pages/UsersCoursePage/UsersCoursePage";
 import UsersCourseAutoPage from "../pages/UsersCourseAutoPage/UsersCourseAutoPage";
 import UsersCourseProfilePage from "../pages/UsersCourseProfilePage/UsersCourseProfilePage";
 
+import BGUPage from "../pages/BGUPage";
+
 export default class Routing extends React.Component {
   render() {
     // console.log("routing");
@@ -18,8 +20,9 @@ export default class Routing extends React.Component {
           <Route path="/dog" component={DogPage} exact></Route>
           <Route path="/wfc" component={WeatherforecastPage} exact></Route>
           <Route path="/uc" component={UsersCoursePage} exact></Route>
-          <Route path="/ucp" component={UsersCourseProfilePage} exact></Route>
+          <Route path="/ucp/:id" component={UsersCourseProfilePage} exact></Route>
           <Route path="/uca" component={UsersCourseAutoPage} exact></Route>
+          <Route path="/bgu" component={BGUPage} exact></Route>
           <Redirect to="/" />
         </Switch>
         {/* </main> */}

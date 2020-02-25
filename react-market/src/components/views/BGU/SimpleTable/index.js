@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 
 export default function SimpleTable(props) {
   const classes = useStyles();
-  const { fetching, usersCourseTable, error, currentPage } = props;
+  const { fetching, budget, error, currentPage } = props;
 
   // console.log("currentPage: " + currentPage);
 
@@ -31,28 +31,24 @@ export default function SimpleTable(props) {
     <React.Fragment>
       <Container maxWidth="lg" width={100}>
         <div className="App">
-          {usersCourseTable ? (
+          {budget ? (
             <TableContainer component={Paper}>
               <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">ID</TableCell>
-                    <TableCell align="center">Names</TableCell>
-                    <TableCell align="center">Photo</TableCell>
-                    {/* <TableCell>Status</TableCell>
-                    <TableCell>Followed</TableCell> */}
+                    <TableCell align="center">Академия</TableCell>
+                    <TableCell align="center">Вид деятельности</TableCell>
+                    <TableCell align="center">Бюджет</TableCell>
+                    <TableCell align="center">Кассовый доход</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {usersCourseTable.items.map(row => (
-                    <TableRow key={row.id}>
-                      <TableCell align="center">{row.id}</TableCell>
-                      <TableCell align="center">{row.name}</TableCell>
-                      <TableCell align="center">
-                        <NavLink to={"/ucp/" + row.id}>
-                          <Avatar src={row.photos.small} />
-                        </NavLink>
-                      </TableCell>
+                  {budget.items.map(row => (
+                    <TableRow key={row.Academy}>
+                      <TableCell align="center">{row.Academy}</TableCell>
+                      <TableCell align="center">{row.KindActivity}</TableCell>
+                      <TableCell align="center">{row.BudgetSP}</TableCell>
+                      <TableCell align="center">{row.Rub}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

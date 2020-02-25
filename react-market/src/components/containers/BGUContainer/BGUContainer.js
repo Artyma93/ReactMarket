@@ -1,31 +1,32 @@
 import React from "react";
-import UsersCourseProfile from "../../views/UsersCourseProfile";
+import BGU from "../../views/BGU";
 import { connect } from "react-redux";
-import * as actions from "./UsersCourseProfileActions";
+import * as actions from "./BGUContainerActions";
 // import { bindActionCreators } from "redux";
 // import axios from "axios";
 import { bindActionCreators } from "redux";
 
-class UsersCourseProfileContainer extends React.Component {
+class BGUContainer extends React.Component {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
     // this.props.setCurrentPage(1);
+    this.props.fetchBGURequest();
   }
   render() {
     // const { fetching } = this.props;
 
     return (
       <React.Fragment>
-        <UsersCourseProfile {...this.props} />
+        <BGU {...this.props} />
       </React.Fragment>
     );
   }
 }
 
 const mapStateToProps = ({
-  usersCourseAutoState: {
+  bguState: {
     fetching,
-    usersCourseTable,
+    budget,
     error,
     pageSize,
     totalUsersCount,
@@ -34,7 +35,7 @@ const mapStateToProps = ({
 }) => {
   return {
     fetching: fetching,
-    usersCourseTable: usersCourseTable,
+    budget: budget,
     error: error,
     pageSize: pageSize,
     totalUsersCount: totalUsersCount,
@@ -43,17 +44,18 @@ const mapStateToProps = ({
 };
 
 const mapDispatchToProps = dispatch => {
-  const { setCurrentPage, setTotalUsersCount } = bindActionCreators(
+  const { setCurrentPage, setTotalUsersCount, fetchBGURequest } = bindActionCreators(
     actions,
     dispatch
   );
   return {
     setCurrentPage: setCurrentPage,
-    setTotalUsersCount: setTotalUsersCount
+    setTotalUsersCount: setTotalUsersCount,
+    fetchBGURequest: fetchBGURequest
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UsersCourseProfileContainer);
+)(BGUContainer);
