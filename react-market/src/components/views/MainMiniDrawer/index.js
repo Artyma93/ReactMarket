@@ -135,6 +135,11 @@ export default function MainMiniDrawer(props) {
         name: "Загрузка 2",
         icons: <AccountBoxIcon />,
         link: "/uca/"
+      },
+      {
+        name: "UC Profile",
+        icons: <AccountBoxIcon />,
+        link: "/ucp/"
       }
     ]
   };
@@ -206,7 +211,6 @@ export default function MainMiniDrawer(props) {
         </List>
 
         <Divider />
-
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
