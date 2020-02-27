@@ -1,3 +1,11 @@
 .cellNum {
-    white-space: nowrap
-  }
+  white-space: nowrap;
+}
+
+.HeadGrid {
+  background-color: white;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+

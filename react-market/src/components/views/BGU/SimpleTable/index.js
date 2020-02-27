@@ -8,6 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
+import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 
 import "./SimpleTable.css";
@@ -40,36 +41,52 @@ export default function SimpleTable(props) {
       <Container maxWidth="lg" width={100}>
         <div className="App">
           {budget ? (
-            <TableContainer component={Paper}>
-              <Table className={classes.table} aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell align="center">Академия</TableCell>
-                    <TableCell align="center">Вид деятельности</TableCell>
-                    <TableCell align="center">Бюджет</TableCell>
-                    <TableCell align="center">Кассовый доход</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {budget.items.map(row => (
-                    <TableRow key={row.Academy}>
-                      <TableCell align="center">{row.Academy}</TableCell>
-                      <TableCell align="center">{row.KindActivity}</TableCell>
-                      <TableCell align="center">{row.BudgetSP}</TableCell>
-                      {/* <TableCell align="center">{row.Rub}</TableCell> */}
-                      {/* <TableCell align="right">{row.Rub.toFixed(2)}</TableCell> */}
-                      {/* <TableCell align="center">{row.Rub.toLocaleString()}</TableCell> */}
-                      <TableCell align="right">
-                        <div className="cellNum">
-                          {/* {numberWithSpaces(row.Rub.toFixed(2))} */}
-                          {numberWithSpaces(parseFloat(row.Rub).toFixed(2))}
-                        </div>
-                      </TableCell>
+            <React.Fragment>
+              <div className="HeadGrid">
+                <Grid
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Grid item >
+                    <div className="HeadGrid2">
+                      <p>Кассовый доход за 2019 год</p>
+                    </div>
+                  </Grid>
+                </Grid>
+              </div>
+              <TableContainer component={Paper}>
+                <Table className={classes.table} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell align="center">Академия</TableCell>
+                      <TableCell align="center">Вид деятельности</TableCell>
+                      <TableCell align="center">Бюджет</TableCell>
+                      <TableCell align="center">Кассовый доход</TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+                  </TableHead>
+                  <TableBody>
+                    {budget.items.map(row => (
+                      <TableRow key={row.Academy}>
+                        <TableCell align="center">{row.Academy}</TableCell>
+                        <TableCell align="center">{row.KindActivity}</TableCell>
+                        <TableCell align="center">{row.BudgetSP}</TableCell>
+                        {/* <TableCell align="center">{row.Rub}</TableCell> */}
+                        {/* <TableCell align="right">{row.Rub.toFixed(2)}</TableCell> */}
+                        {/* <TableCell align="center">{row.Rub.toLocaleString()}</TableCell> */}
+                        <TableCell align="right">
+                          <div className="cellNum">
+                            {/* {numberWithSpaces(row.Rub.toFixed(2))} */}
+                            {numberWithSpaces(parseFloat(row.Rub).toFixed(2))}
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </React.Fragment>
           ) : (
             <p className="App-intro">Загрузка бюджетов</p>
           )}

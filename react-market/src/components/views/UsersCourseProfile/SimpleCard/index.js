@@ -35,8 +35,13 @@ export default function SimpleCard() {
       <Card className={classes.root}>
         <CardContent>
           <Container maxWidth="sm">
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
                 <Avatar
                   alt="Remy Sharp"
                   src="/static/images/avatar/1.jpg"

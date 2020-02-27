@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    })
+    }),
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -222,7 +222,7 @@ export default function MainMiniDrawer(props) {
 
         <Typography
           component="div"
-          style={{ backgroundColor: "gray", height: "10000" }}
+          style={{ backgroundColor: "LightGrey", height: "10000" }}
         >
           {userCource}
         </Typography>
