@@ -1,13 +1,13 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 // import * as types from "../components/containers/Dog/DogConstans";
-import * as types from "./UsersCourseAutoConstans";
+import * as types from "./UsersCourseProfileConstans";
 
-import * as actions from "./UsersCourseAutoActions";
+import * as actions from "./UsersCourseProfileActions";
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export default function* watcherSaga() {
-  yield takeLatest(types.UC_AUTO_SET_CURRENT_PAGE, workerSaga);
+  yield takeLatest(types.UC_PROFILE_API_CALL_FETCH, workerSaga);
 }
 
 // worker saga: makes the api call when watcher saga sees the action
@@ -19,7 +19,7 @@ function* workerSaga(action) {
     // debugger;
     const response = yield axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${action.currentPage}&&count=${6}`
+        `https://social-network.samuraijs.com/api/1.0/profile/${action.page}`
       )
       .then(data => data);
 

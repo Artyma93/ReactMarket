@@ -5,15 +5,18 @@ import * as actions from "./UsersCourseProfileActions";
 // import { bindActionCreators } from "redux";
 // import axios from "axios";
 import { bindActionCreators } from "redux";
+import { withRouter } from "react-router-dom";
 
 class UsersCourseProfileContainer extends React.Component {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
-    // this.props.setCurrentPage(1);
+    let id = this.props.match.params.id;
+    this.props.fetchUsersCourseAuto(id);
   }
   render() {
     // const { fetching } = this.props;
-
+    // const { userCourseProfile } = this.props;
+    // console.log("props in Container" + { userCourseProfile });
     return (
       <React.Fragment>
         <UsersCourseProfile {...this.props} />
@@ -23,37 +26,30 @@ class UsersCourseProfileContainer extends React.Component {
 }
 
 const mapStateToProps = ({
-  usersCourseAutoState: {
-    fetching,
-    usersCourseTable,
-    error,
-    pageSize,
-    totalUsersCount,
-    currentPage
-  }
+  UsersCourseProfileState: { fetching, userCourseProfile, error }
 }) => {
   return {
     fetching: fetching,
-    usersCourseTable: usersCourseTable,
-    error: error,
-    pageSize: pageSize,
-    totalUsersCount: totalUsersCount,
-    currentPage: currentPage
+    userCourseProfile: userCourseProfile,
+    error: error
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  const { setCurrentPage, setTotalUsersCount } = bindActionCreators(
-    actions,
-    dispatch
-  );
+  const { fetchUsersCourseAuto } = bindActionCreators(actions, dispatch);
   return {
-    setCurrentPage: setCurrentPage,
-    setTotalUsersCount: setTotalUsersCount
+    fetchUsersCourseAuto: fetchUsersCourseAuto
   };
 };
+
+let WithUrlDataContainerComponent = withRouter(UsersCourseProfileContainer);
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(UsersCourseProfileContainer);
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UsersCourseProfileContainer);
+)(WithUrlDataContainerComponent);

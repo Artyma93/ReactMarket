@@ -8,7 +8,7 @@ export default class UsersCourseProfile extends Component {
       <React.Fragment>
         <Container maxWidth="sm" width={100}>
           {/* <p>UsersCourseProfile</p> */}
-          <SimpleCard />
+          <SimpleCard {...this.props}/>
         </Container>
       </React.Fragment>
     );

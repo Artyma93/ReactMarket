@@ -9,9 +9,7 @@ export const fetchUsersCourseAutoRequest = () => {
 export const fetchUsersCourseAutoSuccess = response => {
   return {
     type: types.UC_PROFILE_API_CALL_SUCCESS,
-    usersCourseTable: response.data,
-    totalUsersCount: response.data.totalCount,
-    pageSize: 100,
+    userCourseProfile: response.data,
   };
 };
 

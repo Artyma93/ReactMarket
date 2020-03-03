@@ -26,38 +26,64 @@ const useStyles = makeStyles({
   }
 });
 
-export default function SimpleCard() {
+export default function SimpleCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
+  const { userCourseProfile } = props;
+  console.log("userCourseProfile: ");
+  console.log(userCourseProfile);
+  // console.log(userCourseProfile.photos.small)
+  if (userCourseProfile) {
+    console.log(userCourseProfile.photos.small);
+  }
+
   return (
     <React.Fragment>
-      <Card className={classes.root}>
-        <CardContent>
-          <Container maxWidth="sm">
-            <Grid
-              container
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="/static/images/avatar/1.jpg"
-                  className={classes.large}
-                />
+      {userCourseProfile ? (
+        <Card className={classes.root}>
+          <img src={userCourseProfile.photos.large}></img>
+          <CardContent>
+            <Container maxWidth="sm">
+              <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <Avatar
+                    alt="Remy Sharp"
+                    // src="/static/images/avatar/1.jpg"
+                    src={userCourseProfile.photos.small}
+                    className={classes.large}
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-          </Container>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            Word of the Day
-          </Typography>
-          {/* <Typography variant="h5" component="h2">
+            </Container>
+            <Typography
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            >
+              aboutMe: {userCourseProfile.aboutMe}
+              <p />
+              contacts: {userCourseProfile.contacts.vk}
+              <p />
+              fullName: {userCourseProfile.fullName}
+              <p />
+              userId: {userCourseProfile.userId}
+              <p />
+              lookingForAJob: {userCourseProfile.lookingForAJob.toString()}
+              <p/>
+              lookingForAJobDescription: {userCourseProfile.lookingForAJobDescription}
+              {/* <ul>
+                {userCourseProfile.contacts.map(item => (
+                  <li>{item}</li>
+                ))}
+              </ul> */}
+            </Typography>
+            {/* <Typography variant="h5" component="h2">
             be{bull}nev{bull}o{bull}lent
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
@@ -68,11 +94,14 @@ export default function SimpleCard() {
             <br />
             {'"a benevolent smile"'}
           </Typography> */}
-        </CardContent>
-        {/* <CardActions>
+          </CardContent>
+          {/* <CardActions>
           <Button size="small">Learn More</Button>
         </CardActions> */}
-      </Card>
+        </Card>
+      ) : (
+        <p className="App-intro">Download User</p>
+      )}
     </React.Fragment>
   );
 }

@@ -19,7 +19,7 @@ function* workerSaga(action) {
     // debugger;
     const response = yield axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${action.currentPage}&&count=${6}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${action.currentPage}&&count=${100}`
       )
       .then(data => data);
       console.log("response: ")
