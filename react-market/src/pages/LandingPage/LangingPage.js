@@ -6,7 +6,7 @@ import Container from "@material-ui/core/Container";
 
 import DogContainer from "../../components/containers/Dog";
 import MiniDrawer from "../../components/views/MiniDrawer";
-import MainMiniDrawer from "../../components/views/MainMiniDrawer";
+import MainMiniDrawer from "../../components/containers/MainMiniDrawerContainer";
 
 export default class LangingPage extends Component {
   render() {

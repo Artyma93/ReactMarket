@@ -37,6 +37,8 @@ import Grid from "@material-ui/core/Grid";
 
 import { NavLink } from "react-router-dom";
 
+import AuthLabel from "./AuthLabel";
+
 import "./MainMiniDrawer.css";
 
 const drawerWidth = 240;
@@ -159,6 +161,11 @@ export default function MainMiniDrawer(props) {
 
   // debugger
 
+  const { userCourseAuth, isAuth } = props;
+  // console.log("isAuth")
+  // console.log(isAuth)
+
+  //  debugger;
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -206,11 +213,7 @@ export default function MainMiniDrawer(props) {
               </Grid>
             </Grid>
             <Grid item xs={1}>
-              <NavLink to={"/login"}>
-                <IconButton color="inherit">
-                  <InputIcon />
-                </IconButton>
-              </NavLink>
+              <AuthLabel {...props} />
             </Grid>
             {/* <Grid container direction="row" justify="flex-end">
               <Grid item>

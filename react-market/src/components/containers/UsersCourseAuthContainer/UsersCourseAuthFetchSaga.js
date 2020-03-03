@@ -23,7 +23,7 @@ function* workerSaga(action) {
       })
       .then(data => {
         if (data.data.resultCode === 0) {
-          return data;
+          return data.data;
         }
       });
 

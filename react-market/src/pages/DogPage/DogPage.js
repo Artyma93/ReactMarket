@@ -3,7 +3,7 @@ import HeaderContainer from "../../components/containers/Header";
 // import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import MainMiniDrawer from "../../components/views/MainMiniDrawer";
+import MainMiniDrawer from "../../components/containers/MainMiniDrawerContainer";
 import DogContainer from "../../components/containers/Dog";
 
 export default class DogPage extends Component {

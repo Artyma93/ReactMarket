@@ -9,6 +9,8 @@ import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
+import Paper from "@material-ui/core/Paper";
+
 const useStyles = makeStyles({
   root: {
     minWidth: 275
@@ -30,19 +32,15 @@ export default function SimpleCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
-  const { userCourseProfile } = props;
-  console.log("userCourseProfile: ");
-  console.log(userCourseProfile);
-  // console.log(userCourseProfile.photos.small)
-  if (userCourseProfile) {
-    console.log(userCourseProfile.photos.small);
-  }
+  const { userCourseAuth } = props;
+
+  console.log("userCourseAuth");
+  console.log(userCourseAuth);
 
   return (
     <React.Fragment>
-      {userCourseProfile ? (
+      {userCourseAuth ? (
         <Card className={classes.root}>
-          <img src={userCourseProfile.photos.large}></img>
           <CardContent>
             <Container maxWidth="sm">
               <Grid
@@ -55,7 +53,6 @@ export default function SimpleCard(props) {
                   <Avatar
                     alt="Remy Sharp"
                     // src="/static/images/avatar/1.jpg"
-                    src={userCourseProfile.photos.small}
                     className={classes.large}
                   />
                 </Grid>
@@ -66,17 +63,11 @@ export default function SimpleCard(props) {
               color="textSecondary"
               gutterBottom
             >
-              aboutMe: {userCourseProfile.aboutMe}
+              id: {userCourseAuth.id}
               <p />
-              contacts: {userCourseProfile.contacts.vk}
+              login: {userCourseAuth.login}
               <p />
-              fullName: {userCourseProfile.fullName}
-              <p />
-              userId: {userCourseProfile.userId}
-              <p />
-              lookingForAJob: {userCourseProfile.lookingForAJob.toString()}
-              <p/>
-              lookingForAJobDescription: {userCourseProfile.lookingForAJobDescription}
+              email: {userCourseAuth.email}
               {/* <ul>
                 {userCourseProfile.contacts.map(item => (
                   <li>{item}</li>
@@ -100,7 +91,7 @@ export default function SimpleCard(props) {
         </CardActions> */}
         </Card>
       ) : (
-        <p className="App-intro">Download User</p>
+        <p className="App-intro">Authorization</p>
       )}
     </React.Fragment>
   );

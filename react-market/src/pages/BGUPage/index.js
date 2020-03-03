@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
 import BGUContainer from "../../components/containers/BGUContainer";
-import MainMiniDrawer from "../../components/views/MainMiniDrawer";
+import MainMiniDrawer from "../../components/containers/MainMiniDrawerContainer";
 export default class BGUPage extends Component {
   render() {
     return (

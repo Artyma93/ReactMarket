@@ -6,7 +6,7 @@ import Container from "@material-ui/core/Container";
 
 import DogContainer from "../../components/containers/Dog";
 import WeatherforecastContainer from "../../components/containers/Weatherforecast";
-import MainMiniDrawer from "../../components/views/MainMiniDrawer";
+import MainMiniDrawer from "../../components/containers/MainMiniDrawerContainer";
 export default class WeatherforecastPage extends Component {
   render() {
     // console.log("LangingPage");

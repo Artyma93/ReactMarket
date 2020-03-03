@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
 import SimpleCard from "./SimpleCard";
 
-export default class UsersCourseProfile extends Component {
+export default class UsersCourseLogin extends Component {
   render() {
     return (
       <React.Fragment>

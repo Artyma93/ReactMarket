@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
 import UsersCourseAutoContainer from "../../components/containers/UsersCourseAuto";
-import MainMiniDrawer from "../../components/views/MainMiniDrawer";
+import MainMiniDrawer from "../../components/containers/MainMiniDrawerContainer";
 export default class UsersCourseAutoPage extends Component {
   render() {
     return (
