@@ -6,6 +6,8 @@ import WeatherforecastPage from "../pages/WeatherforecastPage/WeatherforecastPag
 import UsersCoursePage from "../pages/UsersCoursePage/UsersCoursePage";
 import UsersCourseAutoPage from "../pages/UsersCourseAutoPage/UsersCourseAutoPage";
 import UsersCourseProfilePage from "../pages/UsersCourseProfilePage/UsersCourseProfilePage";
+import UsersCourseAuthPage from "../pages/UsersCourseAuthPage/UsersCourseAuthPage";
+
 
 import BGUPage from "../pages/BGUPage";
 
@@ -23,6 +25,7 @@ export default class Routing extends React.Component {
           <Route path="/ucp/:id" component={UsersCourseProfilePage} exact></Route>
           <Route path="/uca" component={UsersCourseAutoPage} exact></Route>
           <Route path="/bgu" component={BGUPage} exact></Route>
+          <Route path="/login" component={UsersCourseAuthPage} exact></Route>
           <Redirect to="/" />
         </Switch>
         {/* </main> */}

@@ -18,6 +18,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
+import InputIcon from "@material-ui/icons/Input";
+
 import UsersCourseAutoContainer from "../../containers/UsersCourseAuto";
 
 import LocalMallIcon from "@material-ui/icons/LocalMall";
@@ -31,6 +33,12 @@ import { Link } from "react-router-dom";
 import MiniDrawer from "../MiniDrawer";
 import Box from "@material-ui/core/Box";
 
+import Grid from "@material-ui/core/Grid";
+
+import { NavLink } from "react-router-dom";
+
+import "./MainMiniDrawer.css";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -42,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    }),
+    })
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -126,21 +134,21 @@ export default function MainMiniDrawer(props) {
         icons: <BlurCircularIcon />,
         link: "/wfc/"
       },
-      {
-        name: "Загрузка 1",
-        icons: <AccountBoxIcon />,
-        link: "/uc/"
-      },
+      // {
+      //   name: "Загрузка 1",
+      //   icons: <AccountBoxIcon />,
+      //   link: "/uc/"
+      // },
       {
         name: "Загрузка 2",
         icons: <AccountBoxIcon />,
         link: "/uca/"
       },
-      {
-        name: "UC Profile",
-        icons: <AccountBoxIcon />,
-        link: "/ucp/"
-      },
+      // {
+      //   name: "UC Profile",
+      //   icons: <AccountBoxIcon />,
+      //   link: "/ucp/"
+      // },
       {
         name: "BGU",
         icons: <InboxIcon />,
@@ -161,21 +169,64 @@ export default function MainMiniDrawer(props) {
         })}
       >
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, {
-              [classes.hide]: open
-            })}
+          <Grid
+            container
+            direction="row"
+            justify="flex-start"
+            alignItems="center"
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Главное меню
-          </Typography>
+            <Grid item xs={11}>
+              <Grid
+                container
+                direction="row"
+                justify="flex-start"
+                alignItems="center"
+              >
+                <Grid item xs={1}>
+                  <IconButton
+                    color="inherit"
+                    aria-label="open drawer"
+                    onClick={handleDrawerOpen}
+                    edge="start"
+                    className={clsx(classes.menuButton, {
+                      [classes.hide]: open
+                    })}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={2}>
+                  <Typography variant="h6" noWrap>
+                    Главное меню
+                  </Typography>
+                  {/* <IconButton color="inherit">
+                    <InputIcon />
+                  </IconButton> */}
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={1}>
+              <NavLink to={"/login"}>
+                <IconButton color="inherit">
+                  <InputIcon />
+                </IconButton>
+              </NavLink>
+            </Grid>
+            {/* <Grid container direction="row" justify="flex-end">
+              <Grid item>
+                <IconButton color="inherit">
+                  <InputIcon />
+                </IconButton>
+              </Grid>
+            </Grid> */}
+          </Grid>
         </Toolbar>
+        {/* <IconButton color="inherit">
+          <MenuIcon />
+        </IconButton> */}
+        {/* <Typography variant="h6" noWrap>
+          Главное меню2
+        </Typography> */}
       </AppBar>
       <Drawer
         variant="permanent"

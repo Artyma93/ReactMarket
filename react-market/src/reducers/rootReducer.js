@@ -5,6 +5,7 @@ import UsersCourseReducer from "../components/containers/UsersCourse/UsersCourse
 import UsersCourseAutoReducer from "../components/containers/UsersCourseAuto/UsersCourseAutoReducer";
 import BGUReducer from "../components/containers/BGUContainer/BGUContainerReducer";
 import UsersCourseProfileReducer from "../components/containers/UsersCourseProfileContainer/UsersCourseProfileReducer";
+import UsersCourseAuthReducer from "../components/containers/UsersCourseAuthContainer/UsersCourseAuthReducer";
 
 const rootReducer = combineReducers({
   dogState: DogReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   usersCourseState: UsersCourseReducer,
   usersCourseAutoState: UsersCourseAutoReducer,
   bguState: BGUReducer,
-  UsersCourseProfileState: UsersCourseProfileReducer
+  UsersCourseProfileState: UsersCourseProfileReducer,
+  UsersCourseAuthReducerState: UsersCourseAuthReducer
 });
 
 export default rootReducer;
