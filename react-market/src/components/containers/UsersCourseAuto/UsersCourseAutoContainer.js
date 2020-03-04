@@ -20,7 +20,11 @@ class UsersCourseAutoContainer extends React.Component {
       totalUsersCount,
       currentPage,
       setCurrentPage,
-      setTotalUsersCount
+      setTotalUsersCount,
+      UsersCourseAutoFollow,
+      UsersCourseAutoUnFollow,
+      followId,
+      UsersCourseAutoFollowedStart
     } = this.props;
 
     return (
@@ -34,6 +38,10 @@ class UsersCourseAutoContainer extends React.Component {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           setTotalUsersCount={setTotalUsersCount}
+          UsersCourseAutoFollow={UsersCourseAutoFollow}
+          UsersCourseAutoUnFollow={UsersCourseAutoUnFollow}
+          followId={followId}
+          UsersCourseAutoFollowedStart={UsersCourseAutoFollowedStart}
         />
       </React.Fragment>
     );
@@ -47,7 +55,8 @@ const mapStateToProps = ({
     error,
     pageSize,
     totalUsersCount,
-    currentPage
+    currentPage,
+    followId
   }
 }) => {
   return {
@@ -56,7 +65,8 @@ const mapStateToProps = ({
     error: error,
     pageSize: pageSize,
     totalUsersCount: totalUsersCount,
-    currentPage: currentPage
+    currentPage: currentPage,
+    followId: followId
   };
 };
 
@@ -94,13 +104,19 @@ const mapStateToProps = ({
 // };
 
 const mapDispatchToProps = dispatch => {
-  const { setCurrentPage, setTotalUsersCount } = bindActionCreators(
-    actions,
-    dispatch
-  );
+  const {
+    setCurrentPage,
+    setTotalUsersCount,
+    UsersCourseAutoFollow,
+    UsersCourseAutoUnFollow,
+    UsersCourseAutoFollowedStart
+  } = bindActionCreators(actions, dispatch);
   return {
     setCurrentPage: setCurrentPage,
-    setTotalUsersCount: setTotalUsersCount
+    setTotalUsersCount: setTotalUsersCount,
+    UsersCourseAutoFollow: UsersCourseAutoFollow,
+    UsersCourseAutoUnFollow: UsersCourseAutoUnFollow,
+    UsersCourseAutoFollowedStart: UsersCourseAutoFollowedStart
   };
 };
 

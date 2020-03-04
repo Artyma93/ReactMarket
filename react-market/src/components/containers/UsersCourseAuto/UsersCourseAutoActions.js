@@ -11,7 +11,7 @@ export const fetchUsersCourseAutoSuccess = response => {
     type: types.UC_AUTO_API_CALL_SUCCESS,
     usersCourseTable: response.data,
     totalUsersCount: response.data.totalCount,
-    pageSize: 100,
+    pageSize: 100
     // currentPage: 2
   };
 };
@@ -22,7 +22,7 @@ export const fetchUsersCourseAutoFail = () => {
   };
 };
 
-export const fetchUsersCourseAuto = (page) => {
+export const fetchUsersCourseAuto = page => {
   return {
     type: types.UC_AUTO_API_CALL_FETCH,
     // page: 1,
@@ -43,5 +43,27 @@ export const setTotalUsersCount = totalCount => {
   return {
     type: types.UC_AUTO_SET_CURRENT_PAGE,
     totalCount: totalCount
+  };
+};
+
+export const UsersCourseAutoFollow = userId => {
+  return {
+    type: types.UC_AUTO_USERS_FOLLOW,
+    userId: userId
+  };
+};
+
+export const UsersCourseAutoUnFollow = userId => {
+  return {
+    type: types.UC_AUTO_USERS_UNFOLLOW,
+    userId: userId
+  };
+};
+
+export const UsersCourseAutoFollowedStart = (userId, typeFollowed) => {
+  return {
+    type: types.UC_AUTO_USERS_FOLLOWED_START,
+    userId: userId,
+    typeFollowed: typeFollowed
   };
 };

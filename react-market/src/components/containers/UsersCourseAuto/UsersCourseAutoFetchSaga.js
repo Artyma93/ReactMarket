@@ -19,11 +19,14 @@ function* workerSaga(action) {
     // debugger;
     const response = yield axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${action.currentPage}&&count=${100}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${
+          action.currentPage
+        }&&count=${100}`,
+        { withCredentials: true }
       )
       .then(data => data);
-      console.log("response: ")
-      console.log(response)
+    // console.log("response: ")
+    // console.log(response)
     yield put(actions.fetchUsersCourseAutoSuccess(response));
   } catch (error) {
     // console.log(error)

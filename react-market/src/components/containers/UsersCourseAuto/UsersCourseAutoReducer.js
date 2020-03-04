@@ -7,7 +7,8 @@ const initialState = {
   error: null,
   pageSize: 5,
   totalUsersCount: 0,
-  currentPage: 1
+  currentPage: 1,
+  followId: null
   // pageFetch: 1
 };
 
@@ -41,6 +42,45 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         totalUsersCount: action.totalUsersCount
+      };
+
+    case types.UC_AUTO_USERS_FOLLOW:
+      // debugger;
+      const idxFollow = state.usersCourseTable.items.findIndex(
+        item => item.id === action.userId
+      );
+      const oldItemFollow = state.usersCourseTable.items[idxFollow];
+      const newItemFollow = { ...oldItemFollow, followed: true };
+
+      return {
+        ...state,
+        usersCourseTable: {
+          ...state.usersCourseTable,
+          items: [
+            ...state.usersCourseTable.items.slice(0, idxFollow),
+            newItemFollow,
+            ...state.usersCourseTable.items.slice(idxFollow + 1)
+          ]
+        }
+      };
+
+    case types.UC_AUTO_USERS_UNFOLLOW:
+      const idxUnFollow = state.usersCourseTable.items.findIndex(
+        item => item.id === action.userId
+      );
+      const oldItemUnFollow = state.usersCourseTable.items[idxUnFollow];
+      const newItemUnFollow = { ...oldItemUnFollow, followed: false };
+
+      return {
+        ...state,
+        usersCourseTable: {
+          ...state.usersCourseTable,
+          items: [
+            ...state.usersCourseTable.items.slice(0, idxUnFollow),
+            newItemUnFollow,
+            ...state.usersCourseTable.items.slice(idxUnFollow + 1)
+          ]
+        }
       };
 
     default:

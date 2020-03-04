@@ -15,6 +15,8 @@ import Avatar from "@material-ui/core/Avatar";
 
 import { NavLink } from "react-router-dom";
 
+import ButtonFollowed from "./ButtonFollowed";
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650
@@ -23,10 +25,19 @@ const useStyles = makeStyles({
 
 export default function SimpleTable(props) {
   const classes = useStyles();
-  const { fetching, usersCourseTable, error, currentPage } = props;
+  const {
+    fetching,
+    usersCourseTable,
+    error,
+    currentPage,
+    UsersCourseAutoFollow,
+    UsersCourseAutoUnFollow,
+    followId,
+    UsersCourseAutoFollowedStart
+  } = props;
 
   // console.log("currentPage: " + currentPage);
-
+  // debugger;
   return (
     <React.Fragment>
       <Container maxWidth="lg" width={100}>
@@ -39,6 +50,7 @@ export default function SimpleTable(props) {
                     <TableCell align="center">ID</TableCell>
                     <TableCell align="center">Names</TableCell>
                     <TableCell align="center">Photo</TableCell>
+                    <TableCell align="center">Followed</TableCell>
                     {/* <TableCell>Status</TableCell>
                     <TableCell>Followed</TableCell> */}
                   </TableRow>
@@ -52,6 +64,17 @@ export default function SimpleTable(props) {
                         <NavLink to={"/ucp/" + row.id}>
                           <Avatar src={row.photos.small} />
                         </NavLink>
+                      </TableCell>
+                      {/* <TableCell align="center">{row.followed.toString()}</TableCell> */}
+                      <TableCell align="center">
+                        <ButtonFollowed
+                          id={row.id}
+                          followed={row.followed}
+                          UsersCourseAutoFollow={UsersCourseAutoFollow}
+                          UsersCourseAutoUnFollow={UsersCourseAutoUnFollow}
+                          followId={followId}
+                          UsersCourseAutoFollowedStart={UsersCourseAutoFollowedStart}
+                        />
                       </TableCell>
                     </TableRow>
                   ))}
