@@ -5,7 +5,7 @@ import * as types from "./UsersCourseAutoConstans";
 
 import * as actions from "./UsersCourseAutoActions";
 
-import {getUsers} from "../../../api/UsersCourseApi";
+import {UsersCourseApi} from "../../../api/UsersCourseApi";
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export default function* watcherSaga() {
@@ -31,7 +31,7 @@ function* workerSaga(action) {
     //==== Конец Вариант 1
     //==== Вариант 2
     const pageSize = 100
-    const response = yield getUsers(action.currentPage, pageSize).then(data => data);
+    const response = yield UsersCourseApi.getUsers(action.currentPage, pageSize).then(data => data);
     //==== Конец Вариант 2
     // console.log("response: ")
     // console.log(response)
