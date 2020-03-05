@@ -6,6 +6,8 @@ import * as actions from "./UsersCourseAutoActions";
 // import axios from "axios";
 import { bindActionCreators } from "redux";
 
+import UsersCourseAuthRedirect from "../../../hoc/UsersCourseAuthRedirectHOC";
+
 class UsersCourseAutoContainer extends React.Component {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
@@ -43,26 +45,39 @@ class UsersCourseAutoContainer extends React.Component {
     );
   }
 }
+// Вариант 1
+// const mapStateToProps = ({
+//   usersCourseAutoState: {
+//     fetching,
+//     usersCourseTable,
+//     error,
+//     pageSize,
+//     totalUsersCount,
+//     currentPage,
+//     isfollowingInProgress
+//   }
+// }) => {
+//   return {
+//     fetching: fetching,
+//     usersCourseTable: usersCourseTable,
+//     error: error,
+//     pageSize: pageSize,
+//     totalUsersCount: totalUsersCount,
+//     currentPage: currentPage,
+//     isfollowingInProgress: isfollowingInProgress
+//   };
+// };
+//==== Конец Вариант 1
 
-const mapStateToProps = ({
-  usersCourseAutoState: {
-    fetching,
-    usersCourseTable,
-    error,
-    pageSize,
-    totalUsersCount,
-    currentPage,
-    isfollowingInProgress
-  }
-}) => {
+const mapStateToProps = state => {
   return {
-    fetching: fetching,
-    usersCourseTable: usersCourseTable,
-    error: error,
-    pageSize: pageSize,
-    totalUsersCount: totalUsersCount,
-    currentPage: currentPage,
-    isfollowingInProgress: isfollowingInProgress
+    fetching: state.usersCourseAutoState.fetching,
+    usersCourseTable: state.usersCourseAutoState.usersCourseTable,
+    error: state.usersCourseAutoState.error,
+    pageSize: state.usersCourseAutoState.pageSize,
+    totalUsersCount: state.usersCourseAutoState.totalUsersCount,
+    currentPage: state.usersCourseAutoState.currentPage,
+    isfollowingInProgress: state.usersCourseAutoState.isfollowingInProgress
   };
 };
 
@@ -114,7 +129,9 @@ const mapDispatchToProps = dispatch => {
 
 // export default connect(mapStateToProps, actions)(UsersCourseAutoContainer);
 
+const withUsersCourseAuthRedirect = UsersCourseAuthRedirect(UsersCourseAutoContainer)
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UsersCourseAutoContainer);
+)(withUsersCourseAuthRedirect);

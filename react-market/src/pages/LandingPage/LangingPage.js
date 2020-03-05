@@ -10,7 +10,7 @@ import MainMiniDrawer from "../../components/containers/MainMiniDrawerContainer"
 
 export default class LangingPage extends Component {
   render() {
-    console.log("LangingPage");
+    // console.log("LangingPage");
 
     return (
       <div>

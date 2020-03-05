@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
 import SimpleTable from "./SimpleTable";
 import styles from "./usersCourseAuto.module.css";
+import { Redirect } from "react-router-dom";
 
 export default class UsersCourseAuto extends Component {
   onPageChanged = pageNumber => {
