@@ -8,6 +8,8 @@ import { bindActionCreators } from "redux";
 
 import UsersCourseAuthRedirect from "../../../hoc/UsersCourseAuthRedirectHOC";
 
+import { compose } from "redux";
+
 class UsersCourseAutoContainer extends React.Component {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
@@ -129,9 +131,16 @@ const mapDispatchToProps = dispatch => {
 
 // export default connect(mapStateToProps, actions)(UsersCourseAutoContainer);
 
-const withUsersCourseAuthRedirect = UsersCourseAuthRedirect(UsersCourseAutoContainer)
+// const withUsersCourseAuthRedirect = UsersCourseAuthRedirect(
+//   UsersCourseAutoContainer
+// );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withUsersCourseAuthRedirect);
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(withUsersCourseAuthRedirect);
+
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  UsersCourseAuthRedirect
+)(UsersCourseAutoContainer);
