@@ -10,19 +10,20 @@ class ButtonFollowed extends React.Component {
       isfollowingInProgress
     } = this.props;
     // debugger
+   
     return (
       <React.Fragment>
         {id ? (
           followed === false ? (
             <button
-              disabled={isfollowingInProgress}
+              disabled={isfollowingInProgress.some(item => item === id)}
               onClick={() => UsersCourseAutoFollowedStart(id, "FOLLOW")}
             >
               Follow
             </button>
           ) : (
             <button
-              disabled={isfollowingInProgress}
+              disabled={isfollowingInProgress.some(item => item === id)}
               onClick={() => UsersCourseAutoFollowedStart(id, "UNFOLLOW")}
             >
               Unfollow

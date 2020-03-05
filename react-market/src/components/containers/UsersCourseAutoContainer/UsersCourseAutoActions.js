@@ -75,16 +75,18 @@ export const UsersCourseAutoIsFollowedProgress = isfollowingInProgress => {
   };
 };
 
-export const UsersCourseAutoIsFollowedProgressTrue = () => {
+export const UsersCourseAutoIsFollowedProgressTrue = userId => {
   return {
     type: types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS_TRUE,
-    isfollowingInProgress: true
+    // isfollowingInProgress: true,
+    userId: userId
   };
 };
 
-export const UsersCourseAutoIsFollowedProgressFalse = () => {
+export const UsersCourseAutoIsFollowedProgressFalse = userId => {
   return {
     type: types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS_FALSE,
-    isfollowingInProgress: false
+    // isfollowingInProgress: false,
+    userId: userId
   };
 };

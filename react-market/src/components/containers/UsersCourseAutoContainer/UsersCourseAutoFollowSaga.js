@@ -18,7 +18,7 @@ function* workerSaga(action) {
   // debugger;
   if (action.typeFollowed === "FOLLOW") {
     try {
-      yield put(actions.UsersCourseAutoIsFollowedProgressTrue());
+      yield put(actions.UsersCourseAutoIsFollowedProgressTrue(action.userId));
       const response = yield axios
         .post(
           `https://social-network.samuraijs.com/api/1.0/follow/${action.userId}`,
@@ -34,9 +34,9 @@ function* workerSaga(action) {
       if (response.data.resultCode === 0) {
         yield put(actions.UsersCourseAutoFollow(action.userId));
       }
-      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse(action.userId));
     } catch {
-      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse(action.userId));
     }
   } else {
   }
@@ -44,7 +44,7 @@ function* workerSaga(action) {
   // debugger;
   if (action.typeFollowed === "UNFOLLOW") {
     try {
-      yield put(actions.UsersCourseAutoIsFollowedProgressTrue());
+      yield put(actions.UsersCourseAutoIsFollowedProgressTrue(action.userId));
       const response = yield axios
         .delete(
           `https://social-network.samuraijs.com/api/1.0/follow/${action.userId}`,
@@ -60,9 +60,9 @@ function* workerSaga(action) {
       if (response.data.resultCode === 0) {
         yield put(actions.UsersCourseAutoUnFollow(action.userId));
       }
-      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse(action.userId));
     } catch {
-      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse(action.userId));
     }
 
     // yield put(actions.UsersCourseAutoUnFollow(action.userId));
