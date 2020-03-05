@@ -15,20 +15,20 @@ const getUsers = (currentPage, pageSize = 100) => {
 };
 
 const followUser = userId => {
-  return instanceUsersCourseApi.post(
-    `https://social-network.samuraijs.com/api/1.0/follow/${userId}`,
-    {}
-  );
+  return instanceUsersCourseApi.post(`follow/${userId}`, {});
 };
 
 const unfollowUser = userId => {
-  return instanceUsersCourseApi.delete(
-    `https://social-network.samuraijs.com/api/1.0/follow/${userId}`
-  );
+  return instanceUsersCourseApi.delete(`follow/${userId}`);
+};
+
+const AuthMe = () => {
+  return instanceUsersCourseApi.get(`auth/me`);
 };
 
 export const UsersCourseApi = {
   getUsers: getUsers,
   followUser: followUser,
-  unfollowUser: unfollowUser
+  unfollowUser: unfollowUser,
+  AuthMe: AuthMe
 };
