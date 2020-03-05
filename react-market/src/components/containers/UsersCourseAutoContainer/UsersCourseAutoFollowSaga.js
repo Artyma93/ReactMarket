@@ -14,7 +14,7 @@ export default function* watcherSaga() {
 // action.page
 function* workerSaga(action) {
   // debugger
-  console.log("workerSaga");
+  // console.log("workerSaga");
   // debugger;
   if (action.typeFollowed === "FOLLOW") {
     try {
@@ -37,12 +37,13 @@ function* workerSaga(action) {
   } else {
   }
 
+  // debugger;
   if (action.typeFollowed === "UNFOLLOW") {
     try {
       const response = yield axios
         .delete(
           `https://social-network.samuraijs.com/api/1.0/follow/${action.userId}`,
-          {},
+          // {},
           {
             withCredentials: true,
             headers: { "API-KEY": "062c9fb9-ca31-49b2-b1ce-fd99fe7877c3" }

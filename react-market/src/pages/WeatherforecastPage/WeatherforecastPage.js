@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import HeaderContainer from "../../components/containers/Header";
+import HeaderContainer from "../../components/containers/HeaderContainer";
 // import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
-import DogContainer from "../../components/containers/Dog";
-import WeatherforecastContainer from "../../components/containers/Weatherforecast";
+import DogContainer from "../../components/containers/DogContainer";
+import WeatherforecastContainer from "../../components/containers/WeatherforecastContainer";
 import MainMiniDrawer from "../../components/containers/MainMiniDrawerContainer";
 export default class WeatherforecastPage extends Component {
   render() {

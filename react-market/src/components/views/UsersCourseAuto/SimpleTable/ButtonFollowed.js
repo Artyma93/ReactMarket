@@ -17,7 +17,7 @@ class ButtonFollowed extends React.Component {
             followed === false ? (
             <button onClick={() => UsersCourseAutoFollowedStart(id, "FOLLOW")}>Follow</button>
           ) : (
-            <button onClick={() => UsersCourseAutoUnFollow(id, "UNFOLLOW")}>
+            <button onClick={() => UsersCourseAutoFollowedStart(id, "UNFOLLOW")}>
               Unfollow
             </button>
           )

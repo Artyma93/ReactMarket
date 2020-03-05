@@ -20,7 +20,7 @@ import MailIcon from "@material-ui/icons/Mail";
 
 import InputIcon from "@material-ui/icons/Input";
 
-import UsersCourseAutoContainer from "../../containers/UsersCourseAuto";
+import UsersCourseAutoContainer from "../../containers/UsersCourseAutoContainer";
 
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 import WorkIcon from "@material-ui/icons/Work";

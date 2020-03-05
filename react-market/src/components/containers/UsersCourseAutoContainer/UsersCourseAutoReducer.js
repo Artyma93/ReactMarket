@@ -8,7 +8,8 @@ const initialState = {
   pageSize: 5,
   totalUsersCount: 0,
   currentPage: 1,
-  followId: null
+  followId: null,
+  followingInProgress: false
   // pageFetch: 1
 };
 
