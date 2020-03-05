@@ -67,3 +67,24 @@ export const UsersCourseAutoFollowedStart = (userId, typeFollowed) => {
     typeFollowed: typeFollowed
   };
 };
+
+export const UsersCourseAutoIsFollowedProgress = isfollowingInProgress => {
+  return {
+    type: types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS,
+    isfollowingInProgress: isfollowingInProgress
+  };
+};
+
+export const UsersCourseAutoIsFollowedProgressTrue = () => {
+  return {
+    type: types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS_TRUE,
+    isfollowingInProgress: true
+  };
+};
+
+export const UsersCourseAutoIsFollowedProgressFalse = () => {
+  return {
+    type: types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS_FALSE,
+    isfollowingInProgress: false
+  };
+};

@@ -6,18 +6,25 @@ class ButtonFollowed extends React.Component {
     const {
       followed,
       id,
-      UsersCourseAutoFollow,
-      UsersCourseAutoUnFollow,
-      followId,
-      UsersCourseAutoFollowedStart
+      UsersCourseAutoFollowedStart,
+      isfollowingInProgress
     } = this.props;
+    // debugger
     return (
       <React.Fragment>
         {id ? (
-            followed === false ? (
-            <button onClick={() => UsersCourseAutoFollowedStart(id, "FOLLOW")}>Follow</button>
+          followed === false ? (
+            <button
+              disabled={isfollowingInProgress}
+              onClick={() => UsersCourseAutoFollowedStart(id, "FOLLOW")}
+            >
+              Follow
+            </button>
           ) : (
-            <button onClick={() => UsersCourseAutoFollowedStart(id, "UNFOLLOW")}>
+            <button
+              disabled={isfollowingInProgress}
+              onClick={() => UsersCourseAutoFollowedStart(id, "UNFOLLOW")}
+            >
               Unfollow
             </button>
           )
@@ -26,22 +33,6 @@ class ButtonFollowed extends React.Component {
         )}
       </React.Fragment>
     );
-
-    // return (
-    //   <React.Fragment>
-    //     {id ? (
-    //       id !== followId ? (
-    //         <button onClick={() => UsersCourseAutoFollow(id)}>Follow</button>
-    //       ) : (
-    //         <button onClick={() => UsersCourseAutoUnFollow(id)}>
-    //           Unfollow
-    //         </button>
-    //       )
-    //     ) : (
-    //       <h3>Загрузка</h3>
-    //     )}
-    //   </React.Fragment>
-    // );
   }
 }
 

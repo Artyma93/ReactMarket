@@ -8,8 +8,7 @@ const initialState = {
   pageSize: 5,
   totalUsersCount: 0,
   currentPage: 1,
-  followId: null,
-  followingInProgress: false
+  isfollowingInProgress: false
   // pageFetch: 1
 };
 
@@ -83,7 +82,23 @@ export default function reducer(state = initialState, action) {
           ]
         }
       };
+    case types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS:
+      return {
+        ...state,
+        isfollowingInProgress: action.isfollowingInProgress
+      };
 
+    case types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS_TRUE:
+      return {
+        ...state,
+        isfollowingInProgress: action.isfollowingInProgress
+      };
+
+    case types.UC_AUTO_USERS_IS_FOLLOWED_PROGRESS_FALSE:
+      return {
+        ...state,
+        isfollowingInProgress: action.isfollowingInProgress
+      };
     default:
       return state;
   }

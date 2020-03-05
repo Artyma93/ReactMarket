@@ -21,10 +21,8 @@ class UsersCourseAutoContainer extends React.Component {
       currentPage,
       setCurrentPage,
       setTotalUsersCount,
-      UsersCourseAutoFollow,
-      UsersCourseAutoUnFollow,
-      followId,
-      UsersCourseAutoFollowedStart
+      UsersCourseAutoFollowedStart,
+      isfollowingInProgress
     } = this.props;
 
     return (
@@ -38,10 +36,8 @@ class UsersCourseAutoContainer extends React.Component {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           setTotalUsersCount={setTotalUsersCount}
-          UsersCourseAutoFollow={UsersCourseAutoFollow}
-          UsersCourseAutoUnFollow={UsersCourseAutoUnFollow}
-          followId={followId}
           UsersCourseAutoFollowedStart={UsersCourseAutoFollowedStart}
+          isfollowingInProgress={isfollowingInProgress}
         />
       </React.Fragment>
     );
@@ -56,7 +52,7 @@ const mapStateToProps = ({
     pageSize,
     totalUsersCount,
     currentPage,
-    followId
+    isfollowingInProgress
   }
 }) => {
   return {
@@ -66,7 +62,7 @@ const mapStateToProps = ({
     pageSize: pageSize,
     totalUsersCount: totalUsersCount,
     currentPage: currentPage,
-    followId: followId
+    isfollowingInProgress: isfollowingInProgress
   };
 };
 
@@ -107,15 +103,11 @@ const mapDispatchToProps = dispatch => {
   const {
     setCurrentPage,
     setTotalUsersCount,
-    UsersCourseAutoFollow,
-    UsersCourseAutoUnFollow,
     UsersCourseAutoFollowedStart
   } = bindActionCreators(actions, dispatch);
   return {
     setCurrentPage: setCurrentPage,
     setTotalUsersCount: setTotalUsersCount,
-    UsersCourseAutoFollow: UsersCourseAutoFollow,
-    UsersCourseAutoUnFollow: UsersCourseAutoUnFollow,
     UsersCourseAutoFollowedStart: UsersCourseAutoFollowedStart
   };
 };

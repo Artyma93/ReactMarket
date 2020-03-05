@@ -15,10 +15,8 @@ export default class UsersCourseAuto extends Component {
       pageSize,
       totalUsersCount,
       currentPage,
-      UsersCourseAutoFollow,
-      UsersCourseAutoUnFollow,
-      followId,
-      UsersCourseAutoFollowedStart
+      UsersCourseAutoFollowedStart,
+      isfollowingInProgress
     } = this.props;
 
     const { onPageChanged } = this;
@@ -53,10 +51,8 @@ export default class UsersCourseAuto extends Component {
               usersCourseTable={usersCourseTable}
               error={error}
               currentPage={currentPage}
-              UsersCourseAutoFollow={UsersCourseAutoFollow}
-              UsersCourseAutoUnFollow={UsersCourseAutoUnFollow}
-              followId={followId}
               UsersCourseAutoFollowedStart={UsersCourseAutoFollowedStart}
+              isfollowingInProgress={isfollowingInProgress}
             />
           </div>
         </Container>

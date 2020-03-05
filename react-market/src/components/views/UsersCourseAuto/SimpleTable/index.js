@@ -30,10 +30,8 @@ export default function SimpleTable(props) {
     usersCourseTable,
     error,
     currentPage,
-    UsersCourseAutoFollow,
-    UsersCourseAutoUnFollow,
-    followId,
-    UsersCourseAutoFollowedStart
+    UsersCourseAutoFollowedStart,
+    isfollowingInProgress
   } = props;
 
   // console.log("currentPage: " + currentPage);
@@ -70,10 +68,10 @@ export default function SimpleTable(props) {
                         <ButtonFollowed
                           id={row.id}
                           followed={row.followed}
-                          UsersCourseAutoFollow={UsersCourseAutoFollow}
-                          UsersCourseAutoUnFollow={UsersCourseAutoUnFollow}
-                          followId={followId}
-                          UsersCourseAutoFollowedStart={UsersCourseAutoFollowedStart}
+                          UsersCourseAutoFollowedStart={
+                            UsersCourseAutoFollowedStart
+                          }
+                          isfollowingInProgress={isfollowingInProgress}
                         />
                       </TableCell>
                     </TableRow>

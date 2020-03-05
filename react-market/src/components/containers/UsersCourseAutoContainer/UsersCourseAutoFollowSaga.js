@@ -18,6 +18,7 @@ function* workerSaga(action) {
   // debugger;
   if (action.typeFollowed === "FOLLOW") {
     try {
+      yield put(actions.UsersCourseAutoIsFollowedProgressTrue());
       const response = yield axios
         .post(
           `https://social-network.samuraijs.com/api/1.0/follow/${action.userId}`,
@@ -33,13 +34,17 @@ function* workerSaga(action) {
       if (response.data.resultCode === 0) {
         yield put(actions.UsersCourseAutoFollow(action.userId));
       }
-    } catch {}
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+    } catch {
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+    }
   } else {
   }
 
   // debugger;
   if (action.typeFollowed === "UNFOLLOW") {
     try {
+      yield put(actions.UsersCourseAutoIsFollowedProgressTrue());
       const response = yield axios
         .delete(
           `https://social-network.samuraijs.com/api/1.0/follow/${action.userId}`,
@@ -55,7 +60,10 @@ function* workerSaga(action) {
       if (response.data.resultCode === 0) {
         yield put(actions.UsersCourseAutoUnFollow(action.userId));
       }
-    } catch {}
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+    } catch {
+      yield put(actions.UsersCourseAutoIsFollowedProgressFalse());
+    }
 
     // yield put(actions.UsersCourseAutoUnFollow(action.userId));
   }
