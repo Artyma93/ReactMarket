@@ -1,4 +1,4 @@
-import * as types from "./UsersCourseAutoConstans";
+import * as types from "./UsersCourseAutoConstants";
 
 export const fetchUsersCourseAutoRequest = () => {
   return {

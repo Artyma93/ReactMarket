@@ -1,28 +1,28 @@
-import * as types from "./UsersCourseProfileConstants";
+import * as types from "./UsersCourseLoginConstants";
 
 // reducer with initial state
 const initialState = {
   fetching: false,
-  userCourseProfile: null,
+  login: null,
   error: null
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case types.UC_PROFILE_API_CALL_REQUEST:
+    case types.UC_API_CALL_LOGIN_REQUEST:
       return { ...state, fetching: true, error: null };
-    case types.UC_PROFILE_API_CALL_SUCCESS:
+    case types.UC_API_CALL_LOGIN_SUCCESS:
       return {
         ...state,
         fetching: false,
-        userCourseProfile: action.userCourseProfile,
+        userCourseAuth: true,
         error: null
       };
-    case types.UC_PROFILE_API_CALL_FAILURE:
+    case types.UC_API_CALL_LOGIN_FAILURE:
       return {
         ...state,
         fetching: false,
-        userCourseProfile: null,
+        login: false,
         error: action.error
       };
     default:

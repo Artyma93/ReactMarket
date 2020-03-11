@@ -2,7 +2,7 @@ import {
   API_CALL_REQUEST,
   API_CALL_SUCCESS,
   API_CALL_FAILURE
-} from "./WeatherforecastConstans";
+} from "./WeatherforecastConstants";
 
 // reducer with initial state
 const initialState = {

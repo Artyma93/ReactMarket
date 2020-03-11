@@ -9,6 +9,7 @@ import bguFetchSaga from "../components/containers/BGUContainer/BGUContainerFetc
 import UsersCourseProfileFetchSaga from "../components/containers/UsersCourseProfileContainer/UsersCourseProfileFetchSaga";
 import UsersCourseAuthFetchSaga from "../components/containers/UsersCourseAuthContainer/UsersCourseAuthFetchSaga";
 import UsersCourseAutoFollowSaga from "../components/containers/UsersCourseAutoContainer/UsersCourseAutoFollowSaga";
+import UsersCourseLoginFetchSaga from "../components/containers/UsersCourseLoginContainer/UsersCourseLoginFetchSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -19,6 +20,7 @@ export default function* rootSaga() {
     bguFetchSaga(),
     UsersCourseProfileFetchSaga(),
     UsersCourseAuthFetchSaga(),
-    UsersCourseAutoFollowSaga()
+    UsersCourseAutoFollowSaga(),
+    UsersCourseLoginFetchSaga()
   ]);
 }

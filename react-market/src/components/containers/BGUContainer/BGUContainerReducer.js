@@ -1,4 +1,4 @@
-import * as types from "./BGUContainerConstans";
+import * as types from "./BGUContainerConstants";
 
 // reducer with initial state
 const initialState = {

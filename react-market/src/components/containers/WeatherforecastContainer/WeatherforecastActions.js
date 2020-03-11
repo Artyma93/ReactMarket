@@ -1,4 +1,4 @@
-import * as types from "./WeatherforecastConstans";
+import * as types from "./WeatherforecastConstants";
 
 // export function showLoginForm(show) {
 //   return {

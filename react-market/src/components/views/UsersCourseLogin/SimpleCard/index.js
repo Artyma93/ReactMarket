@@ -34,8 +34,8 @@ export default function SimpleCard(props) {
 
   const { userCourseAuth } = props;
 
-  console.log("userCourseAuth");
-  console.log(userCourseAuth);
+  // console.log("userCourseAuth");
+  // console.log(userCourseAuth);
 
   return (
     <React.Fragment>

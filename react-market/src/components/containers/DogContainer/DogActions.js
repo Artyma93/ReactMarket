@@ -1,4 +1,4 @@
-import * as types from "./DogConstans";
+import * as types from "./DogConstants";
 
 // export function showLoginForm(show) {
 //   return {

@@ -26,9 +26,23 @@ const AuthMe = () => {
   return instanceUsersCourseApi.get(`auth/me`);
 };
 
+const Login = (email, password, rememberMe = false) => {
+  return instanceUsersCourseApi.post(`auth/login`, {
+    email,
+    password,
+    rememberMe
+  });
+};
+
+const Logout = () => {
+  return instanceUsersCourseApi.delete(`auth/login`);
+};
+
 export const UsersCourseApi = {
   getUsers: getUsers,
   followUser: followUser,
   unfollowUser: unfollowUser,
-  AuthMe: AuthMe
+  AuthMe: AuthMe,
+  Login: Login,
+  Logout: Logout
 };

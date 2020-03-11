@@ -1,6 +1,6 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
-import * as types from "./DogConstans";
+import * as types from "./DogConstants";
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export default function* watcherSaga() {

@@ -1,7 +1,7 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 // import * as types from "../components/containers/Dog/DogConstans";
-import * as types from "./BGUContainerConstans";
+import * as types from "./BGUContainerConstants";
 
 import * as actions from "./BGUContainerActions";
 
