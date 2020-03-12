@@ -276,7 +276,7 @@ export default function MainMiniDrawer(props) {
 
         <Typography
           component="div"
-          style={{ backgroundColor: "LightGrey", height: "10000" }}
+          style={{ backgroundColor: "White", height: "10000" }}
         >
           {userCource}
         </Typography>

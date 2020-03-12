@@ -4,9 +4,9 @@ import LangingPage from "../pages/LandingPage/LangingPage";
 import DogPage from "../pages/DogPage/DogPage";
 import WeatherforecastPage from "../pages/WeatherforecastPage/WeatherforecastPage";
 import UsersCoursePage from "../pages/UsersCourse/UsersCoursePage/UsersCoursePage";
-import UsersCourseAutoPage from "../pages/UsersCourseAutoPage/UsersCourseAutoPage";
+import UsersCourseAutoPage from "../pages/UsersCourse/UsersCourseAutoPage/UsersCourseAutoPage";
 import UsersCourseProfilePage from "../pages/UsersCourse/UsersCourseProfilePage/UsersCourseProfilePage";
-import UsersCourseAuthPage from "../pages/UsersCourseAuthPage/UsersCourseAuthPage";
+import UsersCourseAuthPage from "../pages/UsersCourse/UsersCourseAuthPage/UsersCourseAuthPage";
 import UsersCourseOwnProfilePage from "../pages/UsersCourse/UsersCourseOwnProfilePage/UsersCourseOwnProfilePage";
 import UsersCourseLoginPage from "../pages/UsersCourse/UsersCourseLoginPage/UsersCourseLoginPage";
 
