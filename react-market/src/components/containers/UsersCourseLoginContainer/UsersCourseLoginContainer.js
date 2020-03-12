@@ -13,7 +13,6 @@ class UsersCourseLoginContainer extends React.Component {
     // this.props.fetchUsersCourseAuto();
   }
   render() {
-
     return (
       <React.Fragment>
         <UsersCourseLoginView {...this.props} />
@@ -23,12 +22,13 @@ class UsersCourseLoginContainer extends React.Component {
 }
 
 const mapStateToProps = ({
-  UsersCourseAuthReducerState: { fetching, userCourseAuth, error }
+  UsersCourseAuthReducerState: { fetching, userCourseAuth, error, isAuth }
 }) => {
   return {
     fetching: fetching,
     userCourseAuth: userCourseAuth,
-    error: error
+    error: error,
+    isAuth: isAuth
   };
 };
 
@@ -40,7 +40,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 let WithUrlDataContainerComponent = withRouter(UsersCourseLoginContainer);
-
 
 export default connect(
   mapStateToProps,
