@@ -9,41 +9,17 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import Link from "@material-ui/core/Link";
 
-// const AuthLabelF = props => {
-//   const { userCourseAuth, isAuth } = props;
-//   return (
-//     <React.Fragment>
-//       {isAuth === false ? (
-//         <NavLink to={"/login"}>
-//           <IconButton color="inherit">
-//             <InputIcon />
-//           </IconButton>
-//         </NavLink>
-//       ) : (
-//         <h1>login</h1>
-//       )}
-//     </React.Fragment>
-//   );
-// };
 // const classes = useStyles();
 
-class AuthLabelC extends React.Component {
+export class UsersCourseLogoutView extends React.Component {
   componentDidMount() {}
   render() {
     const { userCourseAuth, isAuth } = this.props;
 
-    // console.log("isAuth" + isAuth);
-    // debugger;
     return (
       <React.Fragment>
         {!isAuth ? (
           <>
-            {/* <NavLink to={"/login"}>
-            <IconButton color="inherit">
-              <InputIcon />
-            </IconButton>
-          </NavLink> */}
-
             <IconButton color="inherit" component={NavLink} to={"/login"}>
               <InputIcon />
             </IconButton>
@@ -61,7 +37,7 @@ class AuthLabelC extends React.Component {
               </Grid>
               <Grid item xs={6}>
                 <IconButton color="inherit">
-                  <ExitToAppIcon onClick={this.props.logout} />
+                  <ExitToAppIcon onClick={this.props.UsersCourseLogoutRequest} />
                 </IconButton>
               </Grid>
             </Grid>
@@ -71,7 +47,3 @@ class AuthLabelC extends React.Component {
     );
   }
 }
-
-
-
-export default AuthLabelC;

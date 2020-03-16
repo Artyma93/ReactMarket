@@ -1,4 +1,5 @@
 import * as types from "./UsersCourseAuthConstants";
+import * as typesLogout from "../UsersCourseLogoutContainer/UsersCourseLogoutConstants";
 
 // reducer with initial state
 const initialState = {
@@ -27,6 +28,14 @@ export default function reducer(state = initialState, action) {
         userCourseAuth: null,
         error: action.error,
         isAuth: false
+      };
+    case typesLogout.UC_API_CALL_LOGOUT_SUCCESS:
+      return {
+        ...state,
+        fetching: action.fetching,
+        userCourseAuth: action.userCourseAuth,
+        error: action.error,
+        isAuth: action.isAuth
       };
     default:
       return state;
