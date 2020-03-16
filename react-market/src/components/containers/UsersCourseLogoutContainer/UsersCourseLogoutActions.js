@@ -26,7 +26,7 @@ import * as types from "./UsersCourseLogoutConstants";
 //   };
 // };
 
-export const UsersCourseLogoutRequest = (email, password, rememberMe) => {
+export const UsersCourseLogoutRequest = () => {
   return {
     type: types.UC_API_CALL_LOGOUT
   };
@@ -47,8 +47,9 @@ export const UsersCourseLogoutSuccess = (
   };
 };
 
-export const UsersCourseLogoutFail = () => {
+export const UsersCourseLogoutFail = error => {
   return {
-    type: types.UC_API_CALL_LOGOUT_FAILURE
+    type: types.UC_API_CALL_LOGOUT_FAILURE,
+    error: error
   };
 };

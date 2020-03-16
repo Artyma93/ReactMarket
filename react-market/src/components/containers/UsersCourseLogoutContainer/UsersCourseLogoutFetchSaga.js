@@ -56,7 +56,7 @@ function* workerSaga(action) {
       }
     });
 
-    // yield put(actions.UsersCourseLogoutSuccess(null, null, null, false));
+    yield put(actions.UsersCourseLogoutSuccess(null, null, null, false));
     // debugger;
     // const response2 = yield UsersCourseApi.AuthMe().then(data => {
     //   if (data.data.resultCode === 0) {
