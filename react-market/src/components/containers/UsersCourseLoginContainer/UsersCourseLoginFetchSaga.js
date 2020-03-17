@@ -1,5 +1,5 @@
 import { takeLatest, call, put, select } from "redux-saga/effects";
-import axios from "axios";
+
 // import * as types from "../components/containers/Dog/DogConstans";
 import * as types from "./UsersCourseLoginConstants";
 
@@ -7,7 +7,7 @@ import * as actions from "./UsersCourseLoginActions";
 
 import { UsersCourseApi } from "../../../api/UsersCourseApi";
 
-import { connect } from "react-redux";
+import { stopSubmit } from "redux-form";
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export default function* watcherSaga() {
@@ -59,6 +59,11 @@ function* workerSaga(action) {
         return UsersCourseApi.AuthMe().then(data => {
           if (data.data.resultCode === 0) {
             return data.data;
+          } else {
+            const action = stopSubmit("UsersCourseLogin", {
+              _error: "Email is wrong"
+            });
+            put(action);
           }
         });
       }

@@ -11,6 +11,23 @@ import TextField from "@material-ui/core/TextField";
 
 const maxLength30 = maxLengthCreator(30);
 
+const validate = values => {
+  const errors = {};
+  const requiredFields = ["ucLogin", "ucPassword"];
+  requiredFields.forEach(field => {
+    if (!values[field]) {
+      errors[field] = "Required";
+    }
+  });
+  if (
+    values.ucLogin &&
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.ucLogin)
+  ) {
+    errors.ucLogin = "Invalid email address";
+  }
+  return errors;
+};
+
 const renderTextField = ({
   label,
   input,
@@ -30,19 +47,29 @@ const renderTextField = ({
   />
 );
 
-const renderTextPass = ({ label }) => (
+const renderTextPass = ({
+  label,
+  input,
+  meta: { touched, invalid, error },
+  ...custom
+}) => (
   <TextField
+    variant="outlined"
     label={label}
+    placeholder={label}
     type="password"
     autoComplete="current-password"
-    variant="outlined"
+    error={touched && invalid}
+    helperText={touched && error}
+    {...input}
+    {...custom}
   />
 );
 
 const LoginForm = props => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <div>
+      {/* <div>
         <Field
           component={"input"}
           name={"ucLogin"}
@@ -50,12 +77,41 @@ const LoginForm = props => {
           type="email"
           validate={[requiredField, maxLength30]}
         />
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <Field
           component={"input"}
           name={"ucPassword"}
           placeholder={"Password"}
+          type={"password"}
+        />
+      </div> */}
+      {/* <div>
+        <Field component={"input"} name={"ucRememberMe"} type={"checkbox"} />{" "}
+        remember me
+      </div>
+      <div>
+        <button>Login</button>
+      </div>
+
+      <p />
+      <p /> */}
+
+      <div>
+        <Field
+          component={renderTextField}
+          name={"ucLogin"}
+          label="Email"
+          type="email"
+          // validate={[requiredField, maxLength30]}
+        />
+      </div>
+      <p />
+      <div>
+        <Field
+          component={renderTextPass}
+          name="ucPassword"
+          label="Password"
           type={"password"}
         />
       </div>
@@ -66,33 +122,18 @@ const LoginForm = props => {
       <div>
         <button>Login</button>
       </div>
-
-      <p />
-      <p />
-{/*       
-      <div>
-        <Field name="email" component={renderTextField} label="Email" />
-      </div>
-      <p />
-      <div>
-        <Field name="email" component={renderTextPass} label="Password" />
-      </div> */}
     </form>
   );
 };
 
 const LoginFormReduxForm = reduxForm({
-  form: "UsersCourseLogin"
+  form: "UsersCourseLogin",
+  validate
 })(LoginForm);
 
 const Login = props => {
   const onSubmit = formData => {
-    props
-      .UsersCourseLoginRequest
-      // formData.email,
-      // formData.password,
-      // formData.rememberMe
-      ();
+    props.UsersCourseLoginRequest();
   };
 
   if (props.isAuth) {
@@ -106,17 +147,5 @@ const Login = props => {
     </React.Fragment>
   );
 };
-
-// class Login extends React.Component {
-//   componentDidMount() {}
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <h1>Login</h1>
-//         <LoginFormReduxForm />
-//       </React.Fragment>
-//     );
-//   }
-// }
 
 export default Login;

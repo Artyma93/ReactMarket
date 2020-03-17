@@ -12,6 +12,8 @@ import UsersCourseLoginPage from "../pages/UsersCourse/UsersCourseLoginPage/User
 
 import BGUPage from "../pages/BGUPage";
 
+import MaterialUiForm from "../../src/components/views/UsersCourseLoginView/MaterialUiForm";
+
 export default class Routing extends React.Component {
   render() {
     // console.log("routing");
@@ -37,6 +39,7 @@ export default class Routing extends React.Component {
             component={UsersCourseOwnProfilePage}
             exact
           ></Route>
+          <Route path="/m" component={MaterialUiForm} exact />
           <Redirect to="/" />
         </Switch>
         {/* </main> */}
