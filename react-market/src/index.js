@@ -9,7 +9,7 @@ import axios from "axios";
 
 // import registerServiceWorker from "./registerServiceWorker";
 
-const store = configureStore();
+export const store = configureStore();
 
 // console.log("index");
 

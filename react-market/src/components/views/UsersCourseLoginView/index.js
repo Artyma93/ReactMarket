@@ -9,6 +9,8 @@ import { Redirect } from "react-router-dom";
 
 import TextField from "@material-ui/core/TextField";
 
+import style from "./UsersCourseLoginView.module.css";
+
 const maxLength30 = maxLengthCreator(30);
 
 const validate = values => {
@@ -122,6 +124,9 @@ const LoginForm = props => {
       <div>
         <button>Login</button>
       </div>
+      {props.error && (
+        <div className={style.FormSummaryError}>{props.error}</div>
+      )}
     </form>
   );
 };
