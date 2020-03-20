@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
 import SimpleTable from "./SimpleTable";
 import styles from "./usersCourseAuto.module.css";
+import { CalendarContainer } from "../../containers/CalendarContainer";
 
 export default class BGU extends Component {
   onPageChanged = pageNumber => {
@@ -44,6 +45,10 @@ export default class BGU extends Component {
                 );
               })}
             </div>
+            <div>
+              <CalendarContainer />
+            </div>
+
             <SimpleTable
               fetching={fetching}
               budget={budget}

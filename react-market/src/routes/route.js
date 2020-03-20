@@ -9,6 +9,7 @@ import UsersCourseProfilePage from "../pages/UsersCourse/UsersCourseProfilePage/
 import UsersCourseAuthPage from "../pages/UsersCourse/UsersCourseAuthPage/UsersCourseAuthPage";
 import UsersCourseOwnProfilePage from "../pages/UsersCourse/UsersCourseOwnProfilePage/UsersCourseOwnProfilePage";
 import UsersCourseLoginPage from "../pages/UsersCourse/UsersCourseLoginPage/UsersCourseLoginPage";
+import TestPage from "../pages/TestPage";
 
 import BGUPage from "../pages/BGUPage";
 
@@ -40,6 +41,7 @@ export default class Routing extends React.Component {
             exact
           ></Route>
           <Route path="/m" component={MaterialUiForm} exact />
+          <Route path="/test" component={TestPage} exact />
           <Redirect to="/" />
         </Switch>
         {/* </main> */}

@@ -7,6 +7,7 @@ import BGUReducer from "../components/containers/BGUContainer/BGUContainerReduce
 import UsersCourseProfileReducer from "../components/containers/UsersCourseProfileContainer/UsersCourseProfileReducer";
 import UsersCourseAuthReducer from "../components/containers/UsersCourseAuthContainer/UsersCourseAuthReducer";
 import UsersCourseLoginReducer from "../components/containers/UsersCourseLoginContainer/UsersCourseLoginReducer";
+import AppContainerReducer from "../components/containers/AppContainer/AppContainerReducer";
 import { reducer as formReducer } from "redux-form";
 
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   UsersCourseProfileState: UsersCourseProfileReducer,
   UsersCourseAuthReducerState: UsersCourseAuthReducer,
   UsersCourseLoginReducerState: UsersCourseLoginReducer,
+  AppContainerReducerState: AppContainerReducer,
   form: formReducer
 });
 
