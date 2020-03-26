@@ -6,7 +6,7 @@ import * as actions from "./UsersCourseActions";
 // import axios from "axios";
 import { bindActionCreators } from "redux";
 
-class UsersCourseContainer extends React.Component {
+class UsersCourseContainer extends React.PureComponent {
   // constructor(props) {
   //   super(props);
 

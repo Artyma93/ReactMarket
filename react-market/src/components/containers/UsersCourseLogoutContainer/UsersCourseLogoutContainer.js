@@ -6,7 +6,7 @@ import * as actions from "./UsersCourseLogoutActions";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 
-class UsersCourseLogoutContainer extends React.Component {
+class UsersCourseLogoutContainer extends React.PureComponent {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
     // let id = this.props.match.params.id;

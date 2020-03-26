@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 
-class MainMiniDrawerContainer extends React.Component {
+class MainMiniDrawerContainer extends React.PureComponent {
   componentDidMount() {}
   render() {
     // const { fetching } = this.props;

@@ -10,7 +10,9 @@ import UsersCourseAuthRedirect from "../../../hoc/UsersCourseAuthRedirectHOC";
 
 import { compose } from "redux";
 
-class UsersCourseAutoContainer extends React.Component {
+
+
+class UsersCourseAutoContainer extends React.PureComponent {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
     this.props.setCurrentPage(1);

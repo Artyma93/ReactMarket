@@ -6,7 +6,7 @@ import * as actions from "./BGUContainerActions";
 // import axios from "axios";
 import { bindActionCreators } from "redux";
 
-class BGUContainer extends React.Component {
+class BGUContainer extends React.PureComponent {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
     // this.props.setCurrentPage(1);

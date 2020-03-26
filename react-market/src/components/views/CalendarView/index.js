@@ -14,7 +14,7 @@ import {
   
 } from "@material-ui/pickers";
 
-import { Calendar } from '@material-ui/pickers'
+// import { Calendar } from '@material-ui/pickers'
 
 export default function MaterialUIPickers() {
   // The first commit of Material-UI
@@ -62,7 +62,7 @@ export default function MaterialUIPickers() {
           inputVariant="outlined"
           maxDate={new Date()}
         />
-        <Calendar />
+        {/* <Calendar /> */}
       </Grid>
     </MuiPickersUtilsProvider>
   );

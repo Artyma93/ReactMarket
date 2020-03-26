@@ -3,7 +3,7 @@ import Dog from "../../views/Dog";
 import { connect } from "react-redux";
 import * as actions from "./DogActions";
 
-class DogContainer extends React.Component {
+class DogContainer extends React.PureComponent {
   render() {
     // console.log("DogContainer");
     // debugger

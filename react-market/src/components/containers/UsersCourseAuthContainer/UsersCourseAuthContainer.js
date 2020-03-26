@@ -7,7 +7,7 @@ import * as actions from "./UsersCourseAuthActions";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 
-class UsersCourseAuthContainer extends React.Component {
+class UsersCourseAuthContainer extends React.PureComponent {
   componentDidMount() {
     // this.props.onRequestUsersCourse(this.props.currentPage);
     // let id = this.props.match.params.id;

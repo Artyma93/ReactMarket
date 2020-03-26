@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Container from "@material-ui/core/Container";
 import SimpleTable from "./SimpleTable";
 import styles from "./usersCourseAuto.module.css";
 import { Redirect } from "react-router-dom";
 
-export default class UsersCourseAuto extends Component {
+export default class UsersCourseAuto extends React.PureComponent {
   onPageChanged = pageNumber => {
     this.props.setCurrentPage(pageNumber);
   };

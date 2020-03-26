@@ -3,7 +3,7 @@ import Weatherforecast from "../../views/Weatherforecast";
 import { connect } from "react-redux";
 import * as actions from "./WeatherforecastActions";
 
-class WeatherforecastContainer extends React.Component {
+class WeatherforecastContainer extends React.PureComponent {
   render() {
     // console.log("WeatherforecastContainer");
     // debugger
